@@ -84,7 +84,7 @@ h1 {
 
 #upload-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #E35F83;
     color: white;
     border: none;
     border-radius: 5px;
@@ -94,7 +94,7 @@ h1 {
 }
 
 #upload-button:hover {
-    background-color: #0056b3;
+    background-color: #f36d91;
 }
 
 #file-name {
