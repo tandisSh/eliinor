@@ -55,6 +55,6 @@
 </form>
 <a href="login.php">حساب کاربری دارید؟ وارد شوید</a>
     </div>
-    <script src="signUp.js"></script>
+    <script src="../public/js/signUp.js"></script>
 </body>
 </html>

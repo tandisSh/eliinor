@@ -24,18 +24,18 @@
             <form action="vendor/UserLogin.php"  method="post">
 
             <label for="email">ایمیل:</label>
-            <input type="email" id="email" name="email" value="<?php echo $email; ?>">
-            <span class="error"><?php echo $emailError; ?></span>
+            <input type="email" id="email" name="email" >
+            <span class="error"></span>
 
             <label for="password">رمز عبور:</label>
             <input type="password" id="password" name="password">
-            <span class="error"><?php echo $passwordError; ?></span>
+            <span class="error"></span>
             
             <br><br>
             <input type="submit" value="ورود">
         </form>
         <a href="signUp.php">ثبت‌نام کنید</a>
     </div>
-    <script src="login.js"></script>
+    <script src="../public/js/login.js"></script>
 </body>
 </html>

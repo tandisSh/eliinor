@@ -1,5 +1,5 @@
 <?php 
-include ('vendor/dbConnection.php');
+include ('dbConnection.php');
 
 
 $emailError = $passwordError = "";
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // header("Location: Dashboardd.php");
                 session_start();
                 $_SESSION['users'] = $user;
-                header("Location:./Dashboardd.php");
+                header("Location:../dashbord.php");
                 exit();
                 // exit();
             } else {

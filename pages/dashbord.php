@@ -141,10 +141,10 @@
 
     <script type="text/javascript">
         function login() {
-            window.location.href = "login.html";
+            window.location.href = "login.php";
         }
         function UploadPage() {
-            window.location.href = "upload.html";
+            window.location.href = "upload.php";
         }
     </script>
 </body>

@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if(isset($_SESSION['users']))
+{ if($_SESSION['users']['type'] == 0){
+    header("Location:mainPage.php");
+    exit();
+}
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

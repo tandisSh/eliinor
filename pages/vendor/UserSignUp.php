@@ -1,5 +1,5 @@
 <?php 
-include ('vendor/dbConnection.php');
+include ('dbConnection.php');
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST["username"]);
     $email = htmlspecialchars($_POST["email"]);
@@ -25,7 +25,7 @@ include ('vendor/dbConnection.php');
       //   exit();
       session_start();
           $_SESSION['users'] = $user;
-          header("Location:dashbord.php");
+          header("Location:../dashbord.php");
           exit();
     } catch (PDOException $e) {
         die("Error inserting data: " . $e->getMessage());
