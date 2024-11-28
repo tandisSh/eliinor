@@ -13,7 +13,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous"
       />
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <div class="products__home has-padding pt-4 pt-sm-5">
     <div class="products__home__top">
