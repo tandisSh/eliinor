@@ -24,10 +24,19 @@
                 <td>قیمت کالا<span style="color:red;">*</span></td>
                 <td><input type="text" style="text-align: left;" id="pro-price" name="pro-price"/></td>
             </tr>
+
+
             <tr>
-                <td>آپلود تصویر کالا<span style="color:red;">*</span></td>
-                <td><input type="text" style="text-align: left;" id="pro-image" name="pro-image" size="30"/></td>
-            </tr>
+            <td>آپلود تصویر کالا<span style="color:red;">*</span></td>
+            <td>
+                <!-- دکمه آپلود -->
+                <button type="button" id="upload-button">انتخاب تصویر</button>
+                <!-- ورودی فایل مخفی -->
+                <input type="file" id="image-upload" name="image" hidden />
+                <!-- نام فایل انتخاب شده -->
+                <span id="file-name">هیچ فایلی انتخاب نشده است</span>
+            </td>
+        </tr>
             <tr>
                 <td>توضیحات تکمیلی کالا<span style="color:red;">*</span></td>
                 <td><textarea name="pro-detail" id="pro-detail" cols="45" rows="10" wrap="virtual"></textarea></td>
@@ -39,5 +48,8 @@
 
         </table>
     </form>
+
+
+
 </body>
 </html>
