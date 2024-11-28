@@ -1,4 +1,5 @@
 <?php
+include ('vendor/dbConnection.php');
  session_start();
  if(isset($_SESSION['users']))
  {
@@ -20,19 +21,7 @@
 <div class="container">
 <h2>فرم ورود</h2>
 <?php
-$host = "localhost";
-$dbname = "tamrin";
-$usernameDB = "root";
-$passwordDB = "";
 
-$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-
-try {
-    $pdo = new PDO($dsn, $usernameDB, $passwordDB);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
 
 $emailError = $passwordError = "";
 $email = $password = "";

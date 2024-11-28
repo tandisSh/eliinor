@@ -6,12 +6,12 @@
    <link rel="stylesheet" href="../public/css/upload.css">
 </head>
 <body>
-    <form action="" method="POST" style="direction: rtl;">
+    <form action="adminUpload.php" method="POST" enctype="multipart/form-data" style="direction: rtl;">
         <table>
-            <tr>
+            <!-- <tr>
                 <td>کد کالا<span style="color:red;">*</span></td>
                 <td><input type="text" id="pro-code" name="pro-code"/></td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>نام کالا<span style="color:red;">*</span></td>
                 <td><input type="text" style="text-align: right;" id="pro-name" name="pro-name"/></td>
