@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>فرم ثبت‌نام</title>
-  <link rel="stylesheet" href="signUp.css">
+  <link rel="stylesheet" href="../public/css/signUp.css">
 </head>
 <body>
     <div class="container">
