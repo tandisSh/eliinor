@@ -49,7 +49,7 @@
         </table>
     </form>
 
-
+    <script src="../public/js/upload.js"></script>
 
 </body>
 </html>
