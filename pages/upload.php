@@ -6,7 +6,7 @@
    <link rel="stylesheet" href="../public/css/upload.css">
 </head>
 <body>
-    <form action="adminUpload.php" method="POST" enctype="multipart/form-data" style="direction: rtl;">
+    <form action="vendor/AdminUpload.php" method="POST" enctype="multipart/form-data" style="direction: rtl;">
         <table>
             <!-- <tr>
                 <td>کد کالا<span style="color:red;">*</span></td>
