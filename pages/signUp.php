@@ -53,7 +53,7 @@
 
     <input type="submit" value="ثبت‌نام">
 </form>
-<a href="login.php">حساب کاربری دارید؟ وارد شوید</a>
+<a style=" color:black; " href="login.php">حساب کاربری دارید؟ وارد شوید</a>
     </div>
     <script src="../public/js/signUp.js"></script>
 </body>

@@ -34,7 +34,7 @@
             <br><br>
             <input type="submit" value="ورود">
         </form>
-        <a href="signUp.php">ثبت‌نام کنید</a>
+        <a style=" color:black; " href="signUp.php" >حساب کاربری ندارید؟ ثبت نام کنید</a>
     </div>
     <script src="../public/js/login.js"></script>
 </body>

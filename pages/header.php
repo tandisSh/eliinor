@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,13 @@
                     <g id="Bag_Icon-2" data-name="Bag Icon"><path id="Vector" d="M0,7.361V6.1A6.205,6.205,0,0,1,5.278.028,5.851,5.851,0,0,1,11.7,5.853V7.647" transform="translate(9.751 2.611)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.8"></path><path id="Vector-2" data-name="Vector" d="M7.477,18.2h7.8c5.226,0,6.163-2.093,6.436-4.641l.975-7.8C23.039,2.587,22.129,0,16.578,0H6.177C.625,0-.285,2.587.066,5.76l.975,7.8C1.314,16.108,2.25,18.2,7.477,18.2Z"
                         transform="translate(4.224 10.401)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path id="Vector-3" data-name="Vector" d="M.495.5H.506" transform="translate(19.651 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.8"></path><path id="Vector-4" data-name="Vector" d="M.495.5H.506" transform="translate(10.549 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" 
                         stroke-width="2" opacity="0.8"></path><path id="Vector-5" data-name="Vector" d="M0,0H31.2V31.2H0Z" fill="none" opacity="0"></path></g></svg><!----></button>
-                <button id="login-btn" class="cart__button title="پروفایل کاربری" > ورود و عضویت </button>
+                        <?php 
+                        if(isset($_SESSION['users'])){
+                        ?>
+                <button id="login-btn" class="cart__button title"  > <a href="dashbord.php" style="text-decoration: none; color:white;">داشبورد </a></button>
+                <?php }else{?>
+                    <button id="login-btn" class="cart__button title" ><a href="login.php" style="text-decoration: none; color:white;"> ورود و عضویت </a></button>
+                    <?php }?>
             </div>
         </div>
         <div id="header-down">
