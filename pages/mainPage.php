@@ -1,4 +1,10 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+include ('vendor/dbConnection.php');
+$result=$pdo->prepare("SELECT * FROM products ");
+ $result->execute();
+$products=$result->FetchAll(PDO::FETCH_ASSOC);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,14 +73,15 @@
         </div>
     </div>
     <div class="products__home__products">
+        <?php foreach($products as $product):?>
         <div class="normal product">
             <div class="product__image">
                 <div class="img__holder">
                     <div>
                         <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255">
-                            <!---->
+                           
                             <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/28cc9cf8-2729-4070-a7a2-6d3a0ba74140/product-3422.webp" alt="کت کوک دوزی کوتاه   4255" class="d-block w-100 image-product">
+                                <img src="../public/images/<?php echo $product['pro_image']; ?>" alt="کت کوک دوزی کوتاه   4255" class="d-block w-100 image-product">
                             </figure>
                         </a>
                     </div>
@@ -86,20 +93,20 @@
                     </svg>
                 </button>
                 <div>
-                    <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255"><!----></a>
+                    <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255"></a>
                 </div>
             </div>
             <div>
                 <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255">
                     <div class="product__details bg-white">
                         <a class="product__details__title product-title" href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255">
-                            <span>کت کوک دوزی کوتاه   4255</span>
+                            <span><?php echo $product['pro_name']; ?></span>
                         </a>
                         <div class="product__details__price">
                             <div class="theme3 product__info__price">
-                                <!---->
+                               
                                 <span dir="rtl" class="product__info__price__amount">
-                                    <span class="product__info__price__amount__number">۴۹۹.۰۰۰</span>
+                                    <span class="product__info__price__amount__number"><?php echo $product['pro_price']; ?></span>
                                     <span class="type-price"> تومان </span>
                                 </span>
                             </div>
@@ -108,376 +115,9 @@
                 </a>
             </div>
         </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4496/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D9%84%DB%8C%D9%86%D9%86-%DB%8C%D9%82%D9%87-%D9%87%D9%81%D8%AA-4712">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/80a9c3aa-35d9-4cdc-bfc0-aad27ea8444f/product-4496.webp" alt="شومیز لینن یقه هفت 4712" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4496/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D9%84%DB%8C%D9%86%D9%86-%DB%8C%D9%82%D9%87-%D9%87%D9%81%D8%AA-4712"><!----></a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4496/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D9%84%DB%8C%D9%86%D9%86-%DB%8C%D9%82%D9%87-%D9%87%D9%81%D8%AA-4712">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4496/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D9%84%DB%8C%D9%86%D9%86-%DB%8C%D9%82%D9%87-%D9%87%D9%81%D8%AA-4712">
-                            <span>شومیز لینن یقه هفت 4712</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۳۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4660/%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%D9%88-%D8%B1%D9%88%DB%8C%D9%87-4336">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/8743dedb-8b96-40cb-9dd1-9f939710ee35/product-4660.webp" alt="ست پیراهن و رویه 4336" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4660/%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%D9%88-%D8%B1%D9%88%DB%8C%D9%87-4336"><!----></a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4660/%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%D9%88-%D8%B1%D9%88%DB%8C%D9%87-4336">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4660/%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%D9%88-%D8%B1%D9%88%DB%8C%D9%87-4336">
-                            <span>ست پیراهن و رویه 4336</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۸۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4697/%D9%85%D8%A7%D9%86%D8%AA%D9%88%DA%A9%D8%AA%D8%A7%D9%86-%D8%B1%D9%86%DA%AF%DB%8C-8747">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/d8418de8-48ba-4a30-896f-8ad423650b7b/product-4697.webp" alt="مانتوکتان رنگی 8747" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4697/%D9%85%D8%A7%D9%86%D8%AA%D9%88%DA%A9%D8%AA%D8%A7%D9%86-%D8%B1%D9%86%DA%AF%DB%8C-8747"><!----></a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4697/%D9%85%D8%A7%D9%86%D8%AA%D9%88%DA%A9%D8%AA%D8%A7%D9%86-%D8%B1%D9%86%DA%AF%DB%8C-8747">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4697/%D9%85%D8%A7%D9%86%D8%AA%D9%88%DA%A9%D8%AA%D8%A7%D9%86-%D8%B1%D9%86%DA%AF%DB%8C-8747">
-                            <span>مانتوکتان رنگی 8747</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!----><span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۵۴۹.۰۰۰</span><span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div><div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4698/%DA%A9%D8%AA-%D8%AC%DB%8C%D9%86-%D8%AF%D8%B1%DB%8C%D8%A7-5173">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/5e57171c-2cb3-4ea6-a39b-4c1f03955f94/product-4698.webp" alt="کت جین افرا 5173" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4698/%DA%A9%D8%AA-%D8%AC%DB%8C%D9%86-%D8%AF%D8%B1%DB%8C%D8%A7-5173"><!----></a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4698/%DA%A9%D8%AA-%D8%AC%DB%8C%D9%86-%D8%AF%D8%B1%DB%8C%D8%A7-5173">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4698/%DA%A9%D8%AA-%D8%AC%DB%8C%D9%86-%D8%AF%D8%B1%DB%8C%D8%A7-5173">
-                            <span>کت جین افرا 5173</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۱.۱۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4703/%DA%A9%D8%AA-%D8%A8%D8%A7%D9%85%D8%A8%D8%B1-%D8%AC%DA%A9%D8%AA-6012">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/235413c2-5094-479f-8483-7417432ebad9/product-4703.webp" alt="بامبر جکت 6012" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4703/%DA%A9%D8%AA-%D8%A8%D8%A7%D9%85%D8%A8%D8%B1-%D8%AC%DA%A9%D8%AA-6012"><!----></a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4703/%DA%A9%D8%AA-%D8%A8%D8%A7%D9%85%D8%A8%D8%B1-%D8%AC%DA%A9%D8%AA-6012">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4703/%DA%A9%D8%AA-%D8%A8%D8%A7%D9%85%D8%A8%D8%B1-%D8%AC%DA%A9%D8%AA-6012">
-                            <span>بامبر جکت 6012</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۷۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4730/%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%DA%AF%D9%84%D8%AF%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7%D8%B1%D8%A7-3830">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/b96eacb9-46a6-4143-b697-473dcae3db58/product-4730.webp" alt="پیراهن گلدوزی  صدف 3830" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4730/%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%DA%AF%D9%84%D8%AF%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7%D8%B1%D8%A7-3830">
-                        <!---->
-                    </a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4730/%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%DA%AF%D9%84%D8%AF%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7%D8%B1%D8%A7-3830">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4730/%D9%BE%DB%8C%D8%B1%D8%A7%D9%87%D9%86-%DA%AF%D9%84%D8%AF%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7%D8%B1%D8%A7-3830">
-                            <span>پیراهن گلدوزی  صدف 3830</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۵۶۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div >
-                        <a href="/product/4733/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D8%AF%D9%84%D9%88%DB%8C%D9%86-2213">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/b8995311-341a-4394-8c46-6d3bf8e9f602/product-4733.webp" alt="شومیز دلوین 2213" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4733/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D8%AF%D9%84%D9%88%DB%8C%D9%86-2213">
-                        <!---->
-                    </a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4733/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D8%AF%D9%84%D9%88%DB%8C%D9%86-2213">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4733/%D8%B4%D9%88%D9%85%DB%8C%D8%B2-%D8%AF%D9%84%D9%88%DB%8C%D9%86-2213">
-                            <span>شومیز دلوین 2213</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!----><span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۳۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4735/%D8%B3%D8%AA-%D9%85%D8%A7%D9%86%D8%AA%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%A2%D9%84%D9%85%D8%A7-9373">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/ac66d53d-13df-4e46-b364-cbedf8af297f/product-4735.webp" alt="ست مانتو  و شلوار آلما 9373" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4735/%D8%B3%D8%AA-%D9%85%D8%A7%D9%86%D8%AA%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%A2%D9%84%D9%85%D8%A7-9373">
-                        <!---->
-                    </a>
-                </div>
-            </div>
-            <div>
-                <a href="/product/4735/%D8%B3%D8%AA-%D9%85%D8%A7%D9%86%D8%AA%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%A2%D9%84%D9%85%D8%A7-9373">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4735/%D8%B3%D8%AA-%D9%85%D8%A7%D9%86%D8%AA%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%A2%D9%84%D9%85%D8%A7-9373">
-                            <span>ست مانتو  و شلوار آلما 9373</span>
-                        </a>
-                        <div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount">
-                                    <span class="product__info__price__amount__number">۶۶۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="normal product">
-            <div class="product__image">
-                <div class="img__holder">
-                    <div>
-                        <a href="/product/4739/%D8%B3%D8%AA-%DA%A9%D8%AA-%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D9%86%D8%A7%D8%B2-9890">
-                            <!---->
-                            <figure class="m-0 figure-product overflow-hidden">
-                                <img src="https://api.elinorboutique.com/storage/f3319e15-da30-44be-ad77-8f9bcba5bdc4/product-4739.webp" alt="ست کت و شلوار ساناز 9890" class="d-block w-100 image-product">
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                <button class="product__gallery__main__image__icon favorite productCard">
-                    <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624">
-                        <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white">
-                        </path>
-                    </svg>
-                </button>
-                <div>
-                    <a href="/product/4739/%D8%B3%D8%AA-%DA%A9%D8%AA-%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D9%86%D8%A7%D8%B2-9890"><!----></a>
-
-                </div>
-            </div>
-            <div>
-                <a href="/product/4739/%D8%B3%D8%AA-%DA%A9%D8%AA-%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D9%86%D8%A7%D8%B2-9890">
-                    <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="/product/4739/%D8%B3%D8%AA-%DA%A9%D8%AA-%D9%88-%D8%B4%D9%84%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D9%86%D8%A7%D8%B2-9890">
-                            <span>ست کت و شلوار ساناز 9890</span>
-                        </a><div class="product__details__price">
-                            <div class="theme3 product__info__price">
-                                <!---->
-                                <span dir="rtl" class="product__info__price__amount alone">
-                                    <span class="product__info__price__amount__number">۷۹۹.۰۰۰</span>
-                                    <span class="type-price"> تومان </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <?php endforeach; ?>
+      
+            </div> 
         </div>
     </div>
     <div class="products__home__more">

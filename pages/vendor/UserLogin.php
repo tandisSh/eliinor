@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          
             if ($password === $user['password']) {
            
-                // header("Location: Dashboardd.php");
+                
                 session_start();
                 $_SESSION['users'] = $user;
-                header("Location:../dashbord.php");
+                header("Location:../mainPage.php");
                 exit();
-                // exit();
+                
             } else {
                 $passwordError = "رمز عبور نادرست است";
             }
