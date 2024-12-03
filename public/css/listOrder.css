@@ -10,6 +10,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+
 }
 
 h1 {
@@ -24,6 +25,8 @@ h1 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+
+    
 }
 
 .image-card {
@@ -31,24 +34,34 @@ h1 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    display:flex;
+    flex-direction: row-reverse; /* نمایش تصویر در سمت راست */
+    width: 100%; 
+    padding: 15px; 
+    gap: 15px; /* فاصله بین تصویر و متن */
+    align-items: center; /* تنظیم عمودی محتوا */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .image-card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #eee;
+    width: 120px; 
+    height: 120px; 
+    border-radius: 10px;
+    object-fit: cover; /* حفظ تناسب تصویر */
 }
-
 .actions {
-    padding: 10px;
     display: flex;
-    justify-content: space-around;
     gap: 10px;
+    justify-content: flex-start; /* چینش دکمه‌ها در راست */
 }
 
+#details {
+    flex: 1; /* اجازه می‌دهد متن تمام فضای باقی‌مانده را بگیرد */
+    text-align: center;
+    direction: rtl; 
+    font-size: 1em; 
+    color: #333;
+    line-height: 1.6;
+}
 .edit-btn, .delete-btn {
     padding: 8px 16px;
     background-color: #4CAF50;
@@ -57,6 +70,9 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.edit-btn{
+    margin-left: 10px;
 }
 
 .edit-btn:hover, .delete-btn:hover {
