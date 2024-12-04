@@ -9,12 +9,24 @@
     font-family: "IranSans";
   }
  
-  
+  .main{
+    width: 100%;
+  }
+
+  .leftSec{
+    width: 70%;
+  }
+
+  .Outlet{
+    width: 100%;
+  }
+
   #dashbord {
     list-style: none;
     direction: rtl;
     margin-top: 2vh;
     cursor: pointer;
+    width: 30%;
   }
   
   li {
