@@ -13,7 +13,7 @@ $result = $pdo->query($sql);
     <link rel="stylesheet" href="../public/css/listOrder.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" >
         <h1>لیست سفارش‌ها</h1>
         <div class="gallery">
             <?php if ($result->rowCount() > 0): ?> 

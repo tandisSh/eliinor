@@ -1,66 +1,142 @@
 
-  body,
-  header {
-    margin: 0;
-  }
-  
-  body {
-    background-color: #fbfbfb;
-    font-family: "IranSans";
-  }
- 
-  .main{
-    width: 100%;
-  }
+body, header {
+  margin: 0;
+}
 
-  .leftSec{
-    width: 70%;
-  }
+body {
+  background-color: #fbfbfb; 
+  font-family: Arial, sans-serif; 
+}
 
-  .Outlet{
-    width: 100%;
-  }
+.main {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+}
 
-  #dashbord {
-    list-style: none;
-    direction: rtl;
-    margin-top: 2vh;
-    cursor: pointer;
-    width: 30%;
-  }
-  
-  li {
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .dash:hover li {
-    color: #E35F83;
-  }
-  
-  .dash:hover {
-    background-color: #fcd9e3;
-  }
-  
-  .dash {
-    display: flex;
-    padding: 15px;
-  }
-  
-  .dash1 {
-    display: flex;
-    padding: 15px;
-    background-color: #E35F83;
-    color: #ffffff;
-  }
-  
-  .dash li {
-    padding: 5px 15px;
-  }
-  
-  .main {
-    display: flex;
-    direction: rtl;
-  }
+#rightSec{
+  width: 20%; 
+}
+
+.leftSec {
+  width: 80%; 
+ justify-content: center;
+}
+
+.dashbord{
+  width: 100%;  
+}
+
+.Outlet {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff; 
+  border-radius: 5px;
+}
+
+ul{
+  list-style: none;
+}
+
+#item  {
+  list-style: none;
+  direction: rtl;
+  margin-top: 2vh;
+  cursor: pointer;
+  width: 30%;
+}
+
+li {
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 10px 15px;
+}
+
+
+.item li {
+  color: #E35F83; 
+}
+
+.item:hover {
+  background-color: #fcd9e3;
+}
+
+a {
+  text-decoration: none; 
+  color: inherit;
+}
+
+.item {
+  display: flex;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+aside {
+  display: flex;
+  padding: 15px;
+  background-color: #ffc3b0; 
+  color: #ffffff; 
+  border-radius: 5px;
+}
+
+.item li {
+  padding: 5px 15px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #097e2a; 
+  color: white; 
+  border: none;
+  padding: 10px 20px; 
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #85c140;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: right; 
+}
+
+#upload-button {
+  background-color: #097e2a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#upload-button:hover {
+  background-color: #85c140;
+}
+
+#file-name {
+  margin-top: 10px;
+  color: #555;
+}
 
   
  
