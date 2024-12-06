@@ -1,13 +1,16 @@
 body {
+    direction: rtl;
     overflow: hidden; /* غیرفعال کردن اسکرول اصلی صفحه */
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
     padding: 0;
+   
 }
 
 .container {
+    direction: rtl;
     max-width: 1200px;
     margin: 0 auto;
     max-height: calc(100vh - 50px); /* ارتفاع کانتینر با در نظر گرفتن فضای اضافی */

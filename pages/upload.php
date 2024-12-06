@@ -54,7 +54,7 @@ if(isset($_SESSION['users']))
                 <tr>
                     <td><br></td>
                     <div id="buttons-container">
-                        <td><input type="submit" value="افزودن کالا"/>&nbsp;&nbsp;&nbsp;<input type="reset" value="جدید" /></td>
+                        <td><input type="submit" value="افزودن کالا"/>&nbsp;&nbsp;&nbsp;<input type="reset" value="انصراف" /></td>
                     </div>
                 </tr>
 

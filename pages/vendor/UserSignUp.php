@@ -24,7 +24,7 @@ include ('dbConnection.php');
   
       session_start();
           $_SESSION['users'] = $user;
-          header("Location:../mainPage.php");
+          header("Location:../index.php");
           exit();
     } catch (PDOException $e) {
         die("Error inserting data: " . $e->getMessage());

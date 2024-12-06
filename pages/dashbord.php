@@ -74,16 +74,9 @@ session_start();
                             </svg>
                             <li>ثبت نظر</li>
                         </a>
-                        <a href="./userCounter.html" class="item">
-                            <svg width="20" height="20" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M55.6875 10.125C49.815 10.125 44.1788 12.8588 40.5 17.1788C36.8212 12.8588 31.185 10.125 25.3125 10.125C14.9175 10.125 6.75 18.2925 6.75 28.6875C6.75 41.445 18.225 51.84 35.6063 67.635L40.5 72.0563L45.3937 67.6013C62.775 51.84 74.25 41.445 74.25 28.6875C74.25 18.2925 66.0825 10.125 55.6875 10.125ZM40.8375 62.6062L40.5 62.9437L40.1625 62.6062C24.0975 48.06 13.5 38.4413 13.5 28.6875C13.5 21.9375 18.5625 16.875 25.3125 16.875C30.51 16.875 35.5725 20.2163 37.3612 24.84H43.6725C45.4275 20.2163 50.49 16.875 55.6875 16.875C62.4375 16.875 67.5 21.9375 67.5 28.6875C67.5 38.4413 56.9025 48.06 40.8375 62.6062Z"
-                                    fill="black" fill-opacity="0.4" />
-                            </svg>
-                            <li>علاقه مندی ها و پیشنهادها</li>
-                        </a>
+                      
                         <a href="./historyOrder.html" class="item">
-                        <?xml version="1.0" encoding="iso-8859-1"?>
+                      
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                             <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
