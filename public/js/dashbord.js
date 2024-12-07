@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Load products list when page is loaded
-    loadContent('../php/productsList.php');
+    loadContent('./profile.php');
 });
 
 

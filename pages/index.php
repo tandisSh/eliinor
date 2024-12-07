@@ -1,7 +1,7 @@
 <?php include('header.php');
 include ('vendor/dbConnection.php');
 $result=$pdo->prepare("SELECT * FROM products ");
- $result->execute();
+$result->execute();
 $products=$result->FetchAll(PDO::FETCH_ASSOC);
 
 ?>

@@ -1,8 +1,12 @@
+body{
+    overflow: hidden;
+}
 #formdiv{
     justify-content: center;
     align-items: center; 
     width: 100%;
-   
+    max-height: calc(100vh - 50px); /* ارتفاع کانتینر با در نظر گرفتن فضای اضافی */
+    overflow-y: auto;
     margin: 0 auto;
     padding: 20px;
     direction: rtl;

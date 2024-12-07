@@ -1,0 +1,94 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.left-container {
+  text-align: center;
+  max-width: 300px;
+}
+
+.left-container .img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #E35F83;
+}
+
+.left-container h2 {
+  font-size: 20px;
+  color: #E35F83;
+  margin-bottom: 5px;
+}
+
+.left-container .p {
+  font-size: 14px;
+  color: #666;
+}
+
+.right-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.right-container h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.textAll {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.textAll td {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  vertical-align: middle;
+}
+
+
+.textAll input:focus {
+  border: 1px solid #f2648a;
+}
+
+button.editpass {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #E35F83;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.editpass:hover {
+  background: #d7476d;
+}
