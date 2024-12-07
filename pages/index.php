@@ -78,7 +78,7 @@ $products=$result->FetchAll(PDO::FETCH_ASSOC);
             <div class="product__image">
                 <div class="img__holder">
                     <div>
-                        <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255">
+                       <a href="single.php?id=<?php echo $product['id']; ?>"   >
                            
                             <figure class="m-0 figure-product overflow-hidden">
                                 <img src="../public/images/<?php echo $product['pro_image']; ?>" alt="کت کوک دوزی کوتاه   4255" class="d-block w-100 image-product">
