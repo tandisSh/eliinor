@@ -34,7 +34,6 @@ body {
   background-color: #fff; 
   border-radius: 5px;
 }
-
 ul{
   list-style: none;
 }
@@ -59,7 +58,7 @@ li {
 }
 
 .item:hover {
-  background-color: #fcd9e3;
+  background-color: #ffdce7;
 }
 
 a {
@@ -79,7 +78,7 @@ a {
 aside {
   display: flex;
   padding: 15px;
-  background-color: #ffc3b0; 
+  background-color: #fff2f8; 
   color: #ffffff; 
   border-radius: 5px;
 }

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* استایل فرم */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    color:#c03a5e;
+    box-sizing: border-box;
+}
+
+/* عنوان فرم */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* استایل ورودی‌ها */
+input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #d7476d;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* استایل برای دکمه ارسال */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* استایل پیام‌های خطا و موفقیت */
+.error, .success {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 40%;
+    text-align: center;
+    border:2px solid #E35F83;
+    color: #0f0a0a;
+    background-color: #E35F83;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #d7476d;
+  }

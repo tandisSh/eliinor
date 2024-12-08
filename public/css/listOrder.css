@@ -40,7 +40,7 @@ h1 {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row; /* تغییر جهت به ردیف افقی */
+    flex-direction: row; 
     width: 100%; 
     padding: 15px; 
     gap: 15px; /* فاصله بین تصویر و متن */

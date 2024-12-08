@@ -42,7 +42,7 @@ try {
 <div class="m" dir="rtl">
                 <div class="card">
                     <div class="left-container">
-                        <img class="img" src="avatar.svg">
+                        <img class="img" src="../public/images/avatar.png">
                         <h2 class="gradienttext"><?php echo htmlspecialchars($user['username']); ?></h2>
                         <p class="p"><?php echo htmlspecialchars($user['email']); ?></p>
                     </div>
@@ -71,10 +71,17 @@ try {
                                     <td><?php echo htmlspecialchars($user['national_code']); ?></td>
                                 </tr>
                             </table>
-                            <button class="editpass">تغییر رمز عبور </button>
+                            <div id="newpass">
+                                <a href="newpass.php" >تغییر رمز عبور</a>
+                            </div>
                         </div>
 
                     </div>
                 </div>
+                <!-- <script type="text/javascript">
+        function newpass() {
+            window.location.href = "newpass.php";
+        }
+        </script> -->
 </body>
 </html>

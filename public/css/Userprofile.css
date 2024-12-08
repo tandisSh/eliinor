@@ -1,6 +1,7 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
+  overflow: hidden; /* غیرفعال کردن اسکرول اصلی صفحه */
   margin: 0;
   padding: 0;
   direction: rtl;
@@ -10,6 +11,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  max-height: calc(100vh - 50px); /* ارتفاع کانتینر با در نظر گرفتن فضای اضافی */
+  overflow-y: auto; /* فعال کردن اسکرول عمودی */
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -76,19 +79,21 @@ body {
   border: 1px solid #f2648a;
 }
 
-button.editpass {
+#newpass {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
   font-size: 16px;
-  color: #ffffff;
-  background: #E35F83;
-  border: none;
+  width: 20%;
+  text-align: center;
+  border:2px solid #E35F83;
+  color: #0f0a0a;
+  background-color: #E35F83;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button.editpass:hover {
+#newpass:hover {
   background: #d7476d;
 }
