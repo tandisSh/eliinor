@@ -43,10 +43,21 @@
                       11.5954C20.5302 13.3198 19.5498 14.8829 18.2619 16.1652C16.4301 17.9456 14.4108 19.5179 12.2402 20.8538L12.0051 21L11.761 20.8538Z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                        </path><path d="M15.7393 7.05301C16.8046 7.39331 17.5615 8.34971 17.6561 9.47499" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>
-                <button title="سبد خرید" class="cart__button"><svg  xmlns="http://www.w3.org/2000/svg" width="31.203" height="31.203" viewBox="0 0 31.203 31.203">
-                    <g id="Bag_Icon-2" data-name="Bag Icon"><path id="Vector" d="M0,7.361V6.1A6.205,6.205,0,0,1,5.278.028,5.851,5.851,0,0,1,11.7,5.853V7.647" transform="translate(9.751 2.611)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" opacity="0.8"></path><path id="Vector-2" data-name="Vector" d="M7.477,18.2h7.8c5.226,0,6.163-2.093,6.436-4.641l.975-7.8C23.039,2.587,22.129,0,16.578,0H6.177C.625,0-.285,2.587.066,5.76l.975,7.8C1.314,16.108,2.25,18.2,7.477,18.2Z"
-                        transform="translate(4.224 10.401)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path id="Vector-3" data-name="Vector" d="M.495.5H.506" transform="translate(19.651 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.8"></path><path id="Vector-4" data-name="Vector" d="M.495.5H.506" transform="translate(10.549 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" 
-                        stroke-width="2" opacity="0.8"></path><path id="Vector-5" data-name="Vector" d="M0,0H31.2V31.2H0Z" fill="none" opacity="0"></path></g></svg><!----></button>
+                <button title="سبد خرید" class="cart__button">
+                    <a href="baskethead.php" >
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="31.203" height="31.203" viewBox="0 0 31.203 31.203">
+                            <g id="Bag_Icon-2" data-name="Bag Icon"><path id="Vector" d="M0,7.361V6.1A6.205,6.205,0,0,1,5.278.028,5.851,5.851,0,0,1,11.7,5.853V7.647" transform="translate(9.751 2.611)" fill="none" stroke="#000" stroke-linecap="round" 
+                                stroke-linejoin="round" stroke-width="1.5" opacity="0.8"></path>
+                                <path id="Vector-2" data-name="Vector" d="M7.477,18.2h7.8c5.226,0,6.163-2.093,6.436-4.641l.975-7.8C23.039,2.587,22.129,0,16.578,0H6.177C.625,0-.285,2.587.066,5.76l.975,7.8C1.314,16.108,2.25,18.2,7.477,18.2Z"
+                                transform="translate(4.224 10.401)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path id="Vector-3" data-name="Vector" d="M.495.5H.506" transform="translate(19.651 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.8">
+                                </path>
+                                <path id="Vector-4" data-name="Vector" d="M.495.5H.506" transform="translate(10.549 15.101)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" 
+                                stroke-width="2" opacity="0.8"></path><path id="Vector-5" data-name="Vector" d="M0,0H31.2V31.2H0Z" fill="none" opacity="0">
+                                </path>
+                            </g>
+                        </svg>
+                    </a>
+                </button>
                         <?php 
                         if(isset($_SESSION['users'])){
                         ?>

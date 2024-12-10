@@ -24,6 +24,11 @@ try {
         echo "کاربر پیدا نشد!";
         exit();
     }
+
+        // بررسی نقش کاربر
+    $is_admin = isset($user['type']) && $user['type'] == 1;
+
+  
 } catch (PDOException $e) {
     echo "خطا در ارتباط با پایگاه داده: " . $e->getMessage();
     exit();
@@ -47,7 +52,9 @@ try {
                         <p class="p"><?php echo htmlspecialchars($user['email']); ?></p>
                     </div>
                     <div class="right-container">
-                        <h3 class="gradienttext" style="color: #E35F83;">پروفایل کاربر</h3>
+                        <h3 class="gradienttext" style="color: #E35F83;">
+                        <?php echo $is_admin ? 'پروفایل ادمین' : 'پروفایل کاربر'; ?>
+                        </h3>
                         <div class="wrapper">
                             <table class="textAll">
                                 <tr>

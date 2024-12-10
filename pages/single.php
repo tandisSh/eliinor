@@ -122,8 +122,9 @@ $products=$result->FETCH(PDO::FETCH_ASSOC);
                     <br><br><br><br><br>
                     <div style="display: flex;">
                         <p style="font-weight: 600;font-size: larger;">قیمت:<?php echo $products['pro_price']; ?> تومان</p>
-                        <button class="price-button">
+                        <button class="price-button"><a href="basket.php" style="text-decoration: none; color:white;"> 
                             <span class="price-button-text">افزودن به سبد خرید</span>
+                            </a>
                         </button>
                     </div>
                 </div>

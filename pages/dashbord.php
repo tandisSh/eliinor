@@ -60,7 +60,7 @@ session_start();
                             <li>اطلاعات کاربری</li>
                         </a>
                         
-                        <a href="./sant.php" class="item">
+                        <!-- <a href="./sant.php" class="item">
                             <svg width="20" height="20" viewBox="0 0 73 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1039_3402)">
                                     <path
@@ -74,8 +74,8 @@ session_start();
                                 </defs>
                             </svg>
                             <li>ثبت نظر</li>
-                        </a>
-                        <a href="./userCounter.html" class="item">
+                        </a> -->
+                        <a href="./basketdash.php" class="item">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                             <defs>
                             </defs>
