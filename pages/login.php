@@ -1,11 +1,32 @@
 <?php
 
- session_start();
- if(isset($_SESSION['users']))
- {
-    header("Location:Dashboardd.php");
-    exit();
- }
+//  session_start();
+//  if(isset($_SESSION['users']))
+//  {
+//     header("Location:Dashboardd.php");
+//     exit();
+//  }
+
+session_start();
+require 'vendor/dbConnection.php'; // فایل اتصال به دیتابیس
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT id, password FROM users WHERE username = :username");
+    $stmt->execute(['username' => $username]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id']; // ذخیره شناسه کاربر در سشن
+        header("Location: dashboard.php"); // هدایت به داشبورد
+        exit;
+    } else {
+        echo "نام کاربری یا رمز عبور اشتباه است.";
+    }
+}
+
 ?>
 
 

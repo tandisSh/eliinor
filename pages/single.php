@@ -1,5 +1,6 @@
 <?php 
 include("vendor/dbConnection.php");
+ include("header.php");
 // if (session_status() === PHP_SESSION_NONE) {
 //     session_start();
 // }
@@ -7,7 +8,12 @@ include("vendor/dbConnection.php");
 //     die("لطفاً وارد حساب کاربری خود شوید.");
 // }
 // $user_id = $_SESSION['user_id']; // شناسه کاربر
-
+// if(isset($_SESSION['users']['id'])){
+//     $user_id = $_SESSION['users']['id'];
+//  $resultuser=$pdo->prepare("SELECT * FROM users  WHERE id=$user_id ");
+//  $resultuser->execute();
+// $users=$resultuser->FETCH(PDO::FETCH_ASSOC);
+//  }
 if(isset($_GET['id'])){
     $id = $_GET['id'];
  $result=$pdo->prepare("SELECT * FROM products  WHERE id=$id ");
@@ -15,6 +21,7 @@ if(isset($_GET['id'])){
 $products=$result->FETCH(PDO::FETCH_ASSOC);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +33,7 @@ $products=$result->FETCH(PDO::FETCH_ASSOC);
 </head>
 <body>
     <!-- header -->
-  <?php include("header.php"); ?>
+ 
     <!-- header end -->
     <div class="navbar">
         <p > فروشگاه الینور </p>
@@ -63,7 +70,6 @@ $products=$result->FETCH(PDO::FETCH_ASSOC);
                                 </svg>
                             </a>
                         </div>
-
                     </div>
                     <div style="display: flex;">
                         <p style="color: #e35f83;font-size: small;">دسته:</p>
@@ -130,11 +136,15 @@ $products=$result->FETCH(PDO::FETCH_ASSOC);
                     <br><br><br><br><br>
                     <div style="display: flex;">
                         <p style="font-weight: 600;font-size: larger;">قیمت:<?php echo $products['pro_price']; ?> تومان</p>
-                        <button class="price-button">
-                            <a href='vendor/UserBasket.php?product_id=<?php echo $products['id']; ?> '>
+                        <!-- <button class="price-button">
+                            <a href='vendor/UserBasket.php?product_id= '>
                                 افزودن به سبد خرید
                             </a>
-                        </button>
+                        </button> -->
+                        <form method="Get" action="vendor/UserBasket.php">
+                            <input type="hidden" name="product_id" value="1">
+                            <button type="submit">افزودن به سبد خرید</button>
+                        </form>
                     </div>
                 </div>
             </div>

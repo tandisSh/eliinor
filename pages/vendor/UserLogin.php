@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 session_start();
                 $_SESSION['users'] = $user;
+                // $_SESSION['users']['id']=$user_id;
                 header("Location:../index.php");
                 exit();
                 
