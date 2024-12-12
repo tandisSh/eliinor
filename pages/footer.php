@@ -16,12 +16,6 @@
                 </a>
                 <h5>با عضویت در خبر نامه الینور از آخرین خبر ها با خبر شوید</h5>
             </div>
-                <div class="subscrib-email">
-                    <form class="email-form">
-                    <input id="email-form-input" type="email" placeholder="ایمیل">
-                        <button class="send-email">عضویت</button>
-                    </form>
-                </div>
         </div>
                <div class="down-footer">
                      <div class="down-right">

@@ -1,5 +1,9 @@
 <?php 
 include("vendor/dbConnection.php");
+
+session_start();
+$_SESSION['user_id'] = $user_id;
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
  $result=$pdo->prepare("SELECT * FROM products  WHERE id=$id ");
@@ -122,8 +126,9 @@ $products=$result->FETCH(PDO::FETCH_ASSOC);
                     <br><br><br><br><br>
                     <div style="display: flex;">
                         <p style="font-weight: 600;font-size: larger;">قیمت:<?php echo $products['pro_price']; ?> تومان</p>
-                        <button class="price-button"><a href="basket.php" style="text-decoration: none; color:white;"> 
-                            <span class="price-button-text">افزودن به سبد خرید</span>
+                        <button class="price-button">
+                            <a href='vendor/UserBasket.php?product_id=<?php echo $products['id']; ?> '>
+                                افزودن به سبد خرید
                             </a>
                         </button>
                     </div>
