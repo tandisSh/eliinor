@@ -1,8 +1,12 @@
 <?php 
 include("vendor/dbConnection.php");
-
-session_start();
-$_SESSION['user_id'] = $user_id;
+// if (session_status() === PHP_SESSION_NONE) {
+//     session_start();
+// }
+// if (!isset($_SESSION['user_id'])) {
+//     die("لطفاً وارد حساب کاربری خود شوید.");
+// }
+// $user_id = $_SESSION['user_id']; // شناسه کاربر
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];

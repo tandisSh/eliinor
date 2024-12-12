@@ -3,9 +3,9 @@ session_start();
 require 'dbConnection.php'; // فایل اتصال به دیتابیس
 
 // بررسی ورود کاربر
-if (!isset($_SESSION['user_id'])) {
-    die("لطفاً وارد حساب کاربری خود شوید.");
-}
+// if (!isset($_SESSION['user_id'])) {
+//     die("لطفاً وارد حساب کاربری خود شوید.");
+// }
 
 $host = "localhost";
 $dbname = "elinor";

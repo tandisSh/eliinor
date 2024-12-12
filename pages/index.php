@@ -1,7 +1,5 @@
 <?php include('header.php');
 include ('vendor/dbConnection.php');
-// session_start();
-// $_SESSION['user_id'] = $user_id;
 $result=$pdo->prepare("SELECT * FROM products ");
 $result->execute();
 $products=$result->FetchAll(PDO::FETCH_ASSOC);
