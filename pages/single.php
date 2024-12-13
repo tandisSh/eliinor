@@ -14,9 +14,19 @@ if (isset($_GET['id'])) {
         $results->bindValue(':pro_category_id', $products['pro_category_id'], PDO::PARAM_INT);
         $results->execute();
         $category = $results->fetch(PDO::FETCH_ASSOC);
+
+        $result = $pdo->prepare("SELECT * FROM products WHERE pro_category_id = :pro_category_id");
+        $result->bindValue(':pro_category_id', $products['pro_category_id'], PDO::PARAM_INT);
+        $result->execute();
+        $alike_pro = $result->fetchAll(PDO::FETCH_ASSOC);
+
     } else {
         echo "دسته‌بندی برای این محصول وجود ندارد.";
     }
+   
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
+    include("vendor/UserBasket.php");
 }
 
 ?>
@@ -87,7 +97,7 @@ if (isset($_GET['id'])) {
                     <div style="display: flex;">
                         <p style="font-weight: 600;font-size: larger;">قیمت:<?php echo $products['pro_price']; ?> تومان</p>
 
-                        <form method="POST" action="vendor/UserBasket.php">
+                        <form method="POST" action="single.php?id=<?php echo $id; ?>">
                             <input class="price-button" type="hidden" name="product_id" value="<?php echo $products['id']; ?>">
                             <input type="number" name="quantity" value="1" min="1" style="width: 50px; margin-left: 10px;">
                             <button class="price-button" type="submit" name="add_to_cart">افزودن به سبد خرید</button>
@@ -128,14 +138,15 @@ if (isset($_GET['id'])) {
 
         <!-- products -->
         <div class="products__home__products" data-v-6e63b2b6="">
+            <?php foreach($alike_pro as $pro): ?>
             <div class="normal product" data-v-5be2f538="" data-v-6e63b2b6="">
                 <div class="product__image" data-v-5be2f538="">
                     <div class="img__holder" data-v-5be2f538="">
                         <div data-v-5be2f538="">
-                            <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538="">
+                            <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
 
                                 <figure class="m-0 figure-product overflow-hidden" data-v-5be2f538="">
-                                    <img style="width: 100%;" class="d-block w-100 image-product" data-v-5be2f538="">
+                                <img src="../public/images/<?php echo $pro['pro_image']; ?>" style="width: 100%;" class="d-block w-100 image-product" data-v-5be2f538="">
                                 </figure>
                             </a>
                         </div>
@@ -147,20 +158,20 @@ if (isset($_GET['id'])) {
                         </svg>
                     </button>
                     <div data-v-5be2f538="">
-                        <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538=""></a>
+                        <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
                     </div>
                 </div>
                 <div data-v-5be2f538="">
-                    <a href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538="">
+                <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
                         <div class="product__details bg-white" data-v-5be2f538="">
                             <a class="product__details__title product-title" href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538="">
-                                <span data-v-5be2f538=""> </span>
+                                <span data-v-5be2f538=""> <?php echo $pro['pro_name']; ?></span>
                             </a>
                             <div class="product__details__price" data-v-5be2f538="">
                                 <div class="theme3 product__info__price" data-v-6380910f="" data-v-5be2f538="">
 
                                     <span dir="rtl" class="product__info__price__amount" data-v-6380910f="">
-                                        <span class="product__info__price__amount__number" data-v-6380910f=""></span>
+                                        <span class="product__info__price__amount__number" data-v-6380910f=""><?php echo $pro['pro_price']; ?></span>
                                         <span class="type-price" data-v-6380910f=""> تومان </span>
                                     </span>
                                 </div>
@@ -169,7 +180,7 @@ if (isset($_GET['id'])) {
                     </a>
                 </div>
             </div>
-
+                <?php endforeach; ?>
         </div>
         <!-- products -->
     </div>
