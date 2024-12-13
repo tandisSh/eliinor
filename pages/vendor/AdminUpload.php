@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pro_price = trim($_POST['pro-price']);
     $pro_image = $_FILES['image'];
     $pro_detail = trim($_POST['pro-detail']);
+    $pro_category_id = trim($_POST['pro_category_id']);
 
     if (empty($pro_name)) {
         $errors[] = "لطفاً نام کالا را وارد کنید.";
@@ -27,6 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "لطفاً قیمت کالا را وارد کنید.";
     } elseif (!is_numeric($pro_price) || $pro_price <= 0) {
         $errors[] = "قیمت کالا باید یک عدد مثبت باشد.";
+    }
+    if (empty($pro_category_id)) {
+        $errors[] = "لطفاً دسته بندی کالا را انتخاب کنید.";
     }
 
     //   تصویر کالا
@@ -59,8 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // انتقال فایل به پوشه uploads
         if (move_uploaded_file($pro_image['tmp_name'], $target_file)) {
             
-            $sql = "INSERT INTO products (pro_name, pro_qty, pro_price, pro_image, pro_detail) 
-                    VALUES (:pro_name, :pro_qty, :pro_price, :image_name, :pro_detail)";
+            $sql = "INSERT INTO products (pro_name, pro_qty, pro_price, pro_image, pro_detail, pro_category_id) 
+                    VALUES (:pro_name, :pro_qty, :pro_price, :image_name, :pro_detail ,:pro_category_id)";
 
             $stmt = $pdo->prepare($sql);
 
@@ -69,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':pro_price', $pro_price);
             $stmt->bindParam(':image_name', $image_name);
             $stmt->bindParam(':pro_detail', $pro_detail);
+            $stmt->bindParam(':pro_category_id', $pro_category_id);
 
             if ($stmt->execute()) {
                 echo "کالا با موفقیت افزوده شد.";

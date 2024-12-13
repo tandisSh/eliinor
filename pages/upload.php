@@ -1,14 +1,20 @@
-<?php 
+<?php
+include ('vendor/dbConnection.php'); 
 session_start();
-if(isset($_SESSION['users']))
-{ if($_SESSION['users']['type'] == 0){
-    header("Location:mainPage.php");
-    exit();
+if (isset($_SESSION['users'])) {
+    if ($_SESSION['users']['type'] == 0) {
+        header("Location:mainPage.php");
+        exit();
+    }
 }
-}
+
+$results = $pdo->prepare("SELECT * FROM categories");
+$results->execute();
+$category = $results->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,22 +24,36 @@ if(isset($_SESSION['users']))
 
 <body>
     <div id="formdiv">
-        <form action="vendor/AdminUpload.php" method="POST"  enctype="multipart/form-data" >
-            <table >
+        <form action="vendor/AdminUpload.php" method="POST" enctype="multipart/form-data">
+            <table>
                 <h1>افزودن کالا</h1>
-            
+
                 <tr>
                     <td>نام کالا<span style="color:red;">*</span></td>
-                    <td><input type="text" style="text-align: right;" id="pro-name" name="pro-name"/></td>
+                    <td><input type="text" style="text-align: right;" id="pro-name" name="pro-name" /></td>
                 </tr>
                 <tr>
                     <td>موجودی کالا<span style="color:red;">*</span></td>
-                    <td><input type="text" style="text-align: left;" id="pro-qty" name="pro-qty"/></td>
+                    <td><input type="text" style="text-align: left;" id="pro-qty" name="pro-qty" /></td>
                 </tr>
                 <tr>
                     <td>قیمت کالا<span style="color:red;">*</span></td>
-                    <td><input type="text" style="text-align: left;" id="pro-price" name="pro-price"/></td>
+                    <td><input type="text" style="text-align: left;" id="pro-price" name="pro-price" /></td>
                 </tr>
+                <tr>
+                    <td>دسته‌بندی کالا<span style="color:red;">*</span></td>
+                    <td>
+                        <select name="pro_category_id" id="pro_category_id">
+                            <option value="" disabled selected>انتخاب دسته‌بندی</option>
+                            <?php foreach ($category as $cat): ?>
+                                <option value="<?php echo $cat['id']; ?>">
+                                    <?php echo $cat['name']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+
 
                 <tr>
                     <td>آپلود تصویر کالا<span style="color:red;">*</span></td>
@@ -46,7 +66,7 @@ if(isset($_SESSION['users']))
                         <span id="file-name">هیچ فایلی انتخاب نشده است</span>
                     </td>
                 </tr>
-            </tr>
+                </tr>
                 <tr>
                     <td>توضیحات تکمیلی کالا<span style="color:red;">*</span></td>
                     <td><textarea name="pro-detail" id="pro-detail" cols="45" rows="10" wrap="virtual"></textarea></td>
@@ -54,7 +74,7 @@ if(isset($_SESSION['users']))
                 <tr>
                     <td><br></td>
                     <div id="buttons-container">
-                        <td><input type="submit" value="افزودن کالا"/>&nbsp;&nbsp;&nbsp;<input type="reset" value="انصراف" /></td>
+                        <td><input type="submit" value="افزودن کالا" />&nbsp;&nbsp;&nbsp;<input type="reset" value="انصراف" /></td>
                     </div>
                 </tr>
 
@@ -65,4 +85,5 @@ if(isset($_SESSION['users']))
     <!-- <script src="../public/js/upload.js"></script> -->
 
 </body>
+
 </html>
