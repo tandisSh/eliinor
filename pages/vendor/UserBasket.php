@@ -1,8 +1,8 @@
-<!-- <?php
+ <?php
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
-        include("vendor/dbConnection.php");
+        include("dbConnection.php");
 
         if (!isset($_SESSION['users'])) {
             echo "لطفاً وارد حساب کاربری خود شوید.";
@@ -49,4 +49,4 @@
             // نمایش پیام موفقیت
             echo "محصول به سبد خرید اضافه شد!";
         }
-        ?> -->
+        ?>
