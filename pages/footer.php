@@ -9,14 +9,6 @@
 <body>
 <div class="footer" >
     <section class="content-footer">
-        <div class="top-footer">
-            <div class="logo-footer">
-                <a href="/" class="router-link">
-                    <h2 class="font" style="font-weight:bold;">فروشگاه الینور</h2>
-                </a>
-                <h5>با عضویت در خبر نامه الینور از آخرین خبر ها با خبر شوید</h5>
-            </div>
-        </div>
                <div class="down-footer">
                      <div class="down-right">
                         <h4 class="font" style="font-size: 18px; font-weight:bold;" >درباره فروشگاه الینور</h4>
