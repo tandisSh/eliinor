@@ -48,5 +48,7 @@
 
             // نمایش پیام موفقیت
             echo "محصول به سبد خرید اضافه شد!";
+            header("Location: ../single.php?product_id=" . $product_id);
+            exit; 
         }
         ?>

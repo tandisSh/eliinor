@@ -27,6 +27,19 @@ if (isset($_SESSION["users"])) {
             $product_result = $pdo->prepare("SELECT * FROM products WHERE id IN ($placeholders)");
             $product_result->execute($product_ids); 
             $products = $product_result->fetchAll(PDO::FETCH_ASSOC); 
+
+            //  قیمت کل سبد خرید
+            $total_quantity = 0;
+            $total_price = 0;
+
+            foreach ($basket_items as $item) {
+                foreach ($products as $product) {
+                    if ($item['product_id'] == $product['id']) {
+                        $total_quantity += $item['quantity']; 
+                        $total_price += $product['pro_price'] * $item['quantity']; 
+                    }
+                }
+            }
         } else {
             echo "سبد خرید شما خالی است.";
         }
@@ -62,11 +75,11 @@ if (isset($_SESSION["users"])) {
 
                             <!-- نمایش تعداد هر محصول -->
                             <?php
-                            // پیدا کردن تعداد هر محصول از جدول basket_items
+                            
                             $quantity = 0;
                             foreach ($basket_items as $item) {
                                 if ($item['product_id'] == $product['id']) {
-                                    $quantity = $item['quantity']; // تعداد محصول
+                                    $quantity = $item['quantity']; 
                                     break;
                                 }
                             }
@@ -88,15 +101,15 @@ if (isset($_SESSION["users"])) {
             <h2>سبد خرید شما</h2>
             <div class="summary-item">
                 <span>تعداد کالاها</span>
-                <span></span>
+                <span><?php echo $total_quantity; ?></span> 
             </div>
             <div class="summary-item">
                 <span>جمع سبد خرید</span>
-                <span>178,440 تومان</span>
+                <span><?php echo number_format($total_price); ?> تومان</span> 
             </div>
             <div class="summary-item total">
                 <span>سود شما از خرید</span>
-                <span> تومان</span>
+                <span> تومان</span> 
             </div>
             <button>تایید و تکمیل سفارش</button>
         </div>

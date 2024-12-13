@@ -19,7 +19,6 @@ if (isset($_GET['id'])) {
     }
 }
 
-// include('vendor/UserBasket.php');
 ?>
 
 <!DOCTYPE html>
