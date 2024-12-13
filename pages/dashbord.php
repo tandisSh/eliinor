@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ session_start();
             <div id="rightSec">
                 <aside id="dashbord">
                     <ul>
-                        <span style="padding: 6px 16px 0px 0px   background-color:#fff6f9; color:#b1bac4; font-size:30px;" >
+                        <span style="padding: 6px 16px 0px 0px   background-color=#fff6f9; color:#b1bac4; font-size:30px;" >
                         <svg width="25" height="24" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.1c0 2.8-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2-.9-3.3-.1-1.4-.8-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.09 0-40-17.9-40-40V360c0-.9.03-1.9.09-2.8v-69.6H32.05C14.02 287.6 0 273.5 0 255.5c0-9 3.004-17 10.01-24L266.4 8.016c7-7.014 15-8.016 22-8.016s15 2.004 21.1 7.014L564.8 231.5c8 7 12.1 15 11 24z"
@@ -59,27 +60,12 @@ session_start();
                             </svg>
                             <li>اطلاعات کاربری</li>
                         </a>
-                        
-                        <!-- <a href="./sant.php" class="item">
-                            <svg width="20" height="20" viewBox="0 0 73 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1039_3402)">
-                                    <path
-                                        d="M37.6406 35.2917H21.6721C19.79 35.2917 18.2502 36.8387 18.2502 38.7292C18.2502 40.6198 19.79 42.1667 21.6721 42.1667H37.6406C39.5372 42.1667 41.0625 40.6341 41.0625 38.7292C41.0625 36.8244 39.5372 35.2917 37.6406 35.2917ZM51.3281 21.5417H21.6721C19.79 21.5417 18.2502 23.0886 18.2502 24.9792C18.2502 26.8699 19.79 28.4167 21.6721 28.4167H51.3281C53.2247 28.4167 54.75 26.8842 54.75 24.9792C54.75 23.0743 53.2247 21.5417 51.3281 21.5417ZM36.5 0.787842C16.3396 0.787842 0.128493 14.1268 0.128493 30.5795C0.128493 37.4001 2.96722 43.6492 7.6723 48.6692C5.55216 54.3269 1.13224 59.1078 1.06095 59.161C0.116659 60.1635 -0.132853 61.6316 0.401814 62.8849C0.829408 64.2668 2.05045 65.0834 3.42205 65.0834C12.1892 65.0834 18.9773 61.3951 23.2547 58.4592C27.3709 59.748 31.8322 60.5001 36.5 60.5001C56.6608 60.5001 72.8719 47.1611 72.8719 30.8373C72.8719 14.5135 56.6608 0.787842 36.5 0.787842ZM36.5 53.6251C32.6862 53.6251 28.9264 53.0344 25.3277 51.8893L22.0841 50.8685L19.3053 52.8375C17.2735 54.2869 14.4761 55.8995 11.1084 56.9911C12.1596 55.2549 13.1573 53.3028 13.9415 51.226L15.4556 47.2157L12.5157 44.0818C9.95355 41.3216 6.85247 36.7668 6.85247 30.7084C6.85247 18.0684 20.1465 7.79175 36.3804 7.79175C52.7341 7.79175 65.9084 18.0684 65.9084 30.7084C65.9084 43.3485 52.8681 53.6251 36.5 53.6251Z"
-                                        fill="black" fill-opacity="0.4" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1039_3402">
-                                        <rect width="73" height="66" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <li>ثبت نظر</li>
-                        </a> -->
-                        <a href="./showbasket.php" class="item">
+
+                        <a href="./showbasket.php?user_id=<?php echo $_SESSION['users']['id']; ?>" class="item">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                             <defs>
                             </defs>
-                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill=#b1bac4 fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fil:#b1bac4; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
                                 <path d="M 89.26 25.686 c -0.707 -0.946 -1.789 -1.488 -2.97 -1.488 H 74.974 H 30.6 l -0.686 -2.642 c -0.595 -2.291 -2.664 -3.892 -5.031 -3.892 h -7.565 c -0.552 0 -1 0.448 -1 1 c 0 0.552 0.448 1 1 1 h 7.565 c 1.457 0 2.729 0.984 3.096 2.394 l 9.095 35.022 c 0.114 0.441 0.512 0.749 0.968 0.749 h 42.52 c 0.553 0 1 -0.447 1 -1 s -0.447 -1 -1 -1 H 38.814 l -1.857 -7.149 h 43.176 c 2.284 0 4.332 -1.53 4.979 -3.72 l 4.732 -16.006 C 90.18 27.823 89.966 26.631 89.26 25.686 z M 87.927 28.388 l -4.732 16.006 c -0.398 1.347 -1.657 2.287 -3.061 2.287 H 36.438 l -5.319 -20.483 h 43.855 H 86.29 c 0.544 0 1.042 0.25 1.367 0.685 C 87.983 27.318 88.081 27.867 87.927 28.388 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                 <path d="M 45.396 72.335 c -3.167 0 -5.743 -2.576 -5.743 -5.743 c 0 -3.166 2.576 -5.742 5.743 -5.742 c 3.166 0 5.743 2.576 5.743 5.742 C 51.139 69.759 48.563 72.335 45.396 72.335 z M 45.396 62.85 c -2.064 0 -3.743 1.679 -3.743 3.742 c 0 2.064 1.679 3.743 3.743 3.743 s 3.743 -1.679 3.743 -3.743 C 49.139 64.529 47.46 62.85 45.396 62.85 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                 <path d="M 72.113 72.335 c -3.166 0 -5.742 -2.576 -5.742 -5.743 c 0 -3.166 2.576 -5.742 5.742 -5.742 c 3.167 0 5.743 2.576 5.743 5.742 C 77.856 69.759 75.28 72.335 72.113 72.335 z M 72.113 62.85 c -2.063 0 -3.742 1.679 -3.742 3.742 c 0 2.064 1.679 3.743 3.742 3.743 c 2.064 0 3.743 -1.679 3.743 -3.743 C 75.856 64.529 74.177 62.85 72.113 62.85 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
@@ -91,7 +77,6 @@ session_start();
                             <li>سبد خرید</li>
                         </a>
                         <a href="./historyOrder.html" class="item">
-                        <?xml version="1.0" encoding="iso-8859-1"?>
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                             <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 

@@ -85,10 +85,5 @@ try {
 
                     </div>
                 </div>
-                <!-- <script type="text/javascript">
-        function newpass() {
-            window.location.href = "newpass.php";
-        }
-        </script> -->
 </body>
 </html>
