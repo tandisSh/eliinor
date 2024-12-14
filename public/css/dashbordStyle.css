@@ -51,6 +51,12 @@ li {
   white-space: nowrap;
   padding: 10px 15px;
 }
+#log{
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 10px 15px;
+  color: #E35F83; 
+}
 
 
 .item li {
@@ -60,6 +66,9 @@ li {
 .item:hover {
   background-color: #ffdce7;
 }
+#log:hover {
+  background-color: #ffdce7;
+}
 
 a {
   text-decoration: none; 
@@ -67,6 +76,14 @@ a {
 }
 
 .item {
+  display: flex;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+#log {
   display: flex;
   padding: 15px;
   background-color: #ffffff;
