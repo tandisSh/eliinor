@@ -50,29 +50,27 @@ li {
   font-weight: 500;
   white-space: nowrap;
   padding: 10px 15px;
+  color: #E35F83; 
 }
+
 #log{
   font-weight: 500;
   white-space: nowrap;
   padding: 10px 15px;
-  color: #E35F83; 
+  color: #E35F83;
+  list-style: none;
+  direction: rtl;
+  margin-top: 2vh;
+  cursor: pointer;
+  width: 30%; 
 }
 
-
-.item li {
-  color: #E35F83; 
-}
 
 .item:hover {
   background-color: #ffdce7;
 }
 #log:hover {
   background-color: #ffdce7;
-}
-
-a {
-  text-decoration: none; 
-  color: inherit;
 }
 
 .item {
@@ -83,6 +81,7 @@ a {
   margin-top: 20px;
   transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
+
 #log {
   display: flex;
   padding: 15px;
