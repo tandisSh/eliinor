@@ -66,8 +66,7 @@ if (!isset($_SESSION['users'])) {
                             </svg>
                             <li>اطلاعات کاربری</li>
                         </a>
-
-                        <a href="./showbasket.php?user_id=<?php echo $_SESSION['users']['id']; ?>" class="item">
+                        <a href="<?php echo ($_SESSION['users']['type'] == 1) ? './adminbasket.php' : './showbasket.php?user_id=' . $_SESSION['users']['id']; ?>" class="item">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                             <defs>
                             </defs>
@@ -80,8 +79,15 @@ if (!isset($_SESSION['users'])) {
                                 <path d="M 23.228 48.681 H 3.292 c -0.552 0 -1 -0.447 -1 -1 s 0.448 -1 1 -1 h 19.936 c 0.552 0 1 0.447 1 1 S 23.78 48.681 23.228 48.681 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                             </g>
                         </svg>
-                            <li>سبد خرید</li>
+                            <?php if ($_SESSION['users']['type'] == 1): ?>
+                                <li>لیست سبد خرید ادمین</li> 
+                            <?php else: ?>
+                                <li>سبد خرید</li>
+                            <?php endif; ?>
                         </a>
+
+
+                        
                         <a href="./historyOrder.html" class="item">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">

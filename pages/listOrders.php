@@ -9,12 +9,12 @@ $result = $pdo->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لیست سفارش‌ها</title>
+    <title>لیست محصولات</title>
     <link rel="stylesheet" href="../public/css/listOrder.css">
 </head>
 <body>
     <div class="container" >
-        <h1>لیست سفارش‌ها</h1>
+        <h1>لیست محصولات</h1>
         <div class="gallery">
             <?php if ($result->rowCount() > 0): ?> 
                 <?php while ($row = $result->Fetch(PDO::FETCH_ASSOC)): ?> 
