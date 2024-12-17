@@ -1,6 +1,8 @@
 <?php 
 include ('dbConnection.php');     
-
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
 $pro_name = $pro_qty = $pro_price = $pro_image = $pro_detail = "";
 $errors = [];
 
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($pro_category_id)) {
         $errors[] = "لطفاً دسته بندی کالا را انتخاب کنید.";
     }
-
+  
     //   تصویر کالا
     if (empty($pro_image['name'])) {
         $errors[] = "لطفاً تصویر کالا را وارد کنید.";

@@ -118,3 +118,9 @@ h1 {
     font-size: 0.9rem;
     color: #333;
 }
+
+.error-message {
+    margin-top: 5px;
+    display: block;
+}
+

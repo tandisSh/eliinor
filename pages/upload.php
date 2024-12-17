@@ -19,7 +19,7 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/upload.css">
-    <title>Upload Orders</title>
+    <title>Upload products</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <td>دسته‌بندی کالا<span style="color:red;">*</span></td>
                     <td>
-                        <select name="pro_category_id" id="pro_category_id">
+                        <select name="pro_category_id" id="pro_category_id" >
                             <option value="" disabled selected>انتخاب دسته‌بندی</option>
                             <?php foreach ($category as $cat): ?>
                                 <option value="<?php echo $cat['id']; ?>">
@@ -82,7 +82,7 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
         </form>
     </div>
     <script src="../public/js/dashbord.js"></script>
-    <!-- <script src="../public/js/upload.js"></script> -->
+    <script src="../public/js/up.js"></script>
 
 </body>
 
