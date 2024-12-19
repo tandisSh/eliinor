@@ -2,8 +2,6 @@
 include('vendor/dbConnection.php');
 session_start();
 
-
-// واکشی لیست دسته‌بندی‌ها از دیتابیس
 $sql = "SELECT id, name FROM categories ORDER BY id DESC";
 $stmt = $pdo->query($sql);
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -28,6 +26,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <th>شناسه</th>
                         <th>نام دسته‌بندی</th>
+                        <th>عملیات</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +34,13 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <tr>
                             <td><?php echo $category['id']; ?></td>
                             <td><?php echo htmlspecialchars($category['name']); ?></td>
+                            <td>
+                               
+                                <form action="vendor/deleteCategory.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
+                                    <button type="submit" onclick="return confirm('آیا از حذف این دسته‌بندی مطمئن هستید؟')">حذف</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
