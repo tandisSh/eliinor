@@ -2,12 +2,6 @@
 include('vendor/dbConnection.php');
 session_start();
 
-// بررسی اینکه آیا کاربر ادمین است
-// if (!isset($_SESSION['users']) || $_SESSION['users']['role'] !== 'admin') {
-//     echo "<p style='color: red;'>شما مجاز به دسترسی به این صفحه نیستید.</p>";
-//     exit;
-// }
-
 // بازیابی تمامی سبدهای خرید
 $basket_query = $pdo->prepare("
     SELECT 
