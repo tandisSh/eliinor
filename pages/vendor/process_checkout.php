@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $delete_basket_query->execute(['basket_id' => $basket['basket_id']]);
 
     echo "سفارش شما با موفقیت ثبت شد.";
-    header("Location: order_success.php");
+    header("Location:../Orders.php");
     exit;
 }
 ?>
