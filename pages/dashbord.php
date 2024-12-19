@@ -80,7 +80,7 @@ if (!isset($_SESSION['users'])) {
                             </g>
                         </svg>
                             <?php if ($_SESSION['users']['type'] == 1): ?>
-                                <li>لیست سبد خرید ادمین</li> 
+                                <li>لیست سبد خرید کاربران</li> 
                             <?php else: ?>
                                 <li>سبد خرید</li>
                             <?php endif; ?>
