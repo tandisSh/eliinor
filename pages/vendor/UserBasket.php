@@ -4,15 +4,15 @@
         }
         include("dbConnection.php");
 
+        $user_id = null;
         if (!isset($_SESSION['users'])) {
-            echo "لطفاً وارد حساب کاربری خود شوید.";
-            exit;
+            echo "<p style='color: red;'>لطفاً وارد حساب کاربری خود شوید.</p>";
+        } else {
+            $user_id = $_SESSION['users']['id'];
         }
 
-        $user_id = $_SESSION['users']['id'];
-
         // اضافه کردن محصول به سبد خرید
-        if (isset($_POST['add_to_cart'])) {
+        if (isset($_POST['add_to_cart'])&& $user_id) {
             $product_id = $_POST['product_id'];
             $quantity = $_POST['quantity'];
 

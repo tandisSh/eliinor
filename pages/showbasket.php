@@ -2,9 +2,13 @@
 include('vendor/dbConnection.php');
 session_start();
 if (!isset($_SESSION['users'])) {
-    echo "لطفاً وارد حساب کاربری خود شوید.";
+    echo "<p style='color: red;'>لطفاً وارد حساب کاربری خود شوید.</p>";
     exit;
 }
+
+$total_quantity = 0; // مقداردهی اولیه
+$total_price = 0;    // مقداردهی اولیه
+$products = [];      // مقداردهی اولیه برای جلوگیری از ارورها
 
 if (isset($_SESSION["users"])) {
     $user_id = $_SESSION['users']['id'];
@@ -28,10 +32,7 @@ if (isset($_SESSION["users"])) {
             $product_result->execute($product_ids);
             $products = $product_result->fetchAll(PDO::FETCH_ASSOC);
 
-            //  قیمت کل سبد خرید
-            $total_quantity = 0;
-            $total_price = 0;
-
+            //  محاسبه قیمت کل و تعداد کالاها
             foreach ($basket_items as $item) {
                 foreach ($products as $product) {
                     if ($item['product_id'] == $product['id']) {
@@ -40,11 +41,7 @@ if (isset($_SESSION["users"])) {
                     }
                 }
             }
-        } else {
-            echo "سبد خرید شما خالی است.";
         }
-    } else {
-        echo "سبد خرید برای این کاربر یافت نشد.";
     }
 }
 ?>
@@ -62,7 +59,7 @@ if (isset($_SESSION["users"])) {
 <body>
     <h1>سبد خرید شما</h1>
     <div class="cart-container">
-        <!-- Product Details Section -->
+        <!-- بخش جزئیات محصولات -->
         <?php if (!empty($products)): ?>
             <?php foreach ($products as $product): ?>
                 <div class="product-details">
@@ -77,7 +74,6 @@ if (isset($_SESSION["users"])) {
 
                             <!-- نمایش تعداد هر محصول -->
                             <?php
-
                             $quantity = 0;
                             foreach ($basket_items as $item) {
                                 if ($item['product_id'] == $product['id']) {
@@ -86,7 +82,6 @@ if (isset($_SESSION["users"])) {
                                 }
                             }
                             ?>
-
                             <div>
                                 <span>تعداد: <?php echo $quantity; ?></span>
                             </div>
@@ -95,30 +90,30 @@ if (isset($_SESSION["users"])) {
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>سبد خرید شما خالی است.</p>
+            <p style="color: orange;">سبد خرید شما خالی است.</p>
         <?php endif; ?>
 
-        <!-- Cart Summary Section -->
-        <div class="cart-summary">
-            <h2>سبد خرید شما</h2>
-            <div class="summary-item">
-                <span>تعداد کالاها</span>
-                <span><?php echo $total_quantity; ?></span>
+        <!-- بخش خلاصه سبد خرید -->
+        <?php if (!empty($products)): ?>
+            <div class="cart-summary">
+                <h2>سبد خرید شما</h2>
+                <div class="summary-item">
+                    <span>تعداد کالاها</span>
+                    <span><?php echo $total_quantity; ?></span>
+                </div>
+                <div class="summary-item">
+                    <span>جمع سبد خرید</span>
+                    <span><?php echo number_format($total_price); ?> تومان</span>
+                </div>
+                <div class="summary-item total">
+                    <span>سود شما از خرید</span>
+                    <span> تومان</span>
+                </div>
+                <form action="checkout.php" method="POST">
+                    <button type="submit">تایید و تکمیل سفارش</button>
+                </form>
             </div>
-            <div class="summary-item">
-                <span>جمع سبد خرید</span>
-                <span><?php echo number_format($total_price); ?> تومان</span>
-            </div>
-            <div class="summary-item total">
-                <span>سود شما از خرید</span>
-                <span> تومان</span>
-            </div>
-            <form action="checkout.php" method="POST">
-                <button type="submit">تایید و تکمیل سفارش</button>
-            </form>
-
-
-        </div>
+        <?php endif; ?>
     </div>
 </body>
 
