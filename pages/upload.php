@@ -3,7 +3,7 @@ include ('vendor/dbConnection.php');
 session_start();
 if (isset($_SESSION['users'])) {
     if ($_SESSION['users']['type'] == 0) {
-        header("Location:mainPage.php");
+        header("Location:index.php");
         exit();
     }
 }
