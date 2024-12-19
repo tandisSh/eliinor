@@ -1,0 +1,114 @@
+/* adminOrders.css */
+body {
+    font-family: 'Vazir', Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.order {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.order h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.order p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.order-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.order-items th,
+.order-items td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-items th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.order-items td {
+    background-color: #fff;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.order-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-actions button:nth-child(2) {
+    background-color: #dc3545;
+}
+
+.order-actions button:hover {
+    background-color: #0056b3;
+}
+
+.order-actions button:nth-child(2):hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order p {
+        font-size: 0.8rem;
+    }
+
+    .order-items th,
+    .order-items td {
+        font-size: 0.8rem;
+    }
+
+    .order-actions button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
