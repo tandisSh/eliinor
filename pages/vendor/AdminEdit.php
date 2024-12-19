@@ -1,14 +1,12 @@
 <?php
-include ('dbConnection.php'); 
+include('dbConnection.php');
 session_start();
 
-// بررسی اینکه آیا کاربر لاگین کرده است یا خیر
 if (!isset($_SESSION['users'])) {
     header("Location:../login.php");
     exit();
 }
 
-// دریافت داده‌های فرم
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $productId = $_POST['product_id'];
     $name = $_POST['pro-name'];
@@ -18,15 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $details = $_POST['pro-detail'];
     $imagePath = null;
 
-    // بررسی وجود تصویر آپلودی
     if (isset($_FILES['pro_image']) && $_FILES['pro_image']['error'] === UPLOAD_ERR_OK) {
         $imageName = $_FILES['pro_image']['name'];
         $imageTmpPath = $_FILES['pro_image']['tmp_name'];
         $imageDestination = '../uploads/' . $imageName;
 
-        // انتقال فایل به پوشه‌ی uploads
         if (move_uploaded_file($imageTmpPath, $imageDestination)) {
-            $imagePath = 'uploads/' . $imageName; // مسیر جدید تصویر
+            $imagePath = 'uploads/' . $imageName; 
         } else {
             echo "مشکلی در آپلود تصویر پیش آمد.";
             exit();
@@ -44,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // به‌روزرسانی اطلاعات محصول در دیتابیس
     $stmt = $pdo->prepare("UPDATE products 
                            SET pro_name = :name, 
                                pro_qty = :quantity, 
@@ -59,13 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'price' => $price,
         'category_id' => $categoryId,
         'details' => $details,
-        'image' => $imagePath, // مسیر تصویر (جدید یا قبلی)
+        'image' => $imagePath,
         'id' => $productId,
     ]);
-
-    // پیام موفقیت و ریدایرکت به صفحه لیست محصولات
+    
     echo "محصول با موفقیت ویرایش شد.";
     header("Location:../listOrders.php");
     exit();
 }
-?>

@@ -1,5 +1,5 @@
 <?php
-include ('vendor/dbConnection.php');
+include('vendor/dbConnection.php');
 session_start();
 if (!isset($_SESSION['users'])) {
     echo "لطفاً وارد حساب کاربری خود شوید.";
@@ -13,20 +13,20 @@ if (isset($_SESSION["users"])) {
     $baskets = $result->fetchAll(PDO::FETCH_ASSOC);
 
     if (!empty($baskets)) {
-        $basket_id = $baskets[0]['basket_id'];   
+        $basket_id = $baskets[0]['basket_id'];
         $item_result = $pdo->prepare("SELECT * FROM basket_items WHERE basket_id = :basket_id");
         $item_result->execute(['basket_id' => $basket_id]);
         $basket_items = $item_result->fetchAll(PDO::FETCH_ASSOC);
 
         if (!empty($basket_items)) {
-            $product_ids = array_map(function($item) {
+            $product_ids = array_map(function ($item) {
                 return $item['product_id'];
             }, $basket_items);
 
             $placeholders = implode(',', array_fill(0, count($product_ids), '?'));
             $product_result = $pdo->prepare("SELECT * FROM products WHERE id IN ($placeholders)");
-            $product_result->execute($product_ids); 
-            $products = $product_result->fetchAll(PDO::FETCH_ASSOC); 
+            $product_result->execute($product_ids);
+            $products = $product_result->fetchAll(PDO::FETCH_ASSOC);
 
             //  قیمت کل سبد خرید
             $total_quantity = 0;
@@ -35,8 +35,8 @@ if (isset($_SESSION["users"])) {
             foreach ($basket_items as $item) {
                 foreach ($products as $product) {
                     if ($item['product_id'] == $product['id']) {
-                        $total_quantity += $item['quantity']; 
-                        $total_price += $product['pro_price'] * $item['quantity']; 
+                        $total_quantity += $item['quantity'];
+                        $total_price += $product['pro_price'] * $item['quantity'];
                     }
                 }
             }
@@ -51,12 +51,14 @@ if (isset($_SESSION["users"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../public/css/showBasket.css">
 </head>
+
 <body>
     <h1>سبد خرید شما</h1>
     <div class="cart-container">
@@ -75,11 +77,11 @@ if (isset($_SESSION["users"])) {
 
                             <!-- نمایش تعداد هر محصول -->
                             <?php
-                            
+
                             $quantity = 0;
                             foreach ($basket_items as $item) {
                                 if ($item['product_id'] == $product['id']) {
-                                    $quantity = $item['quantity']; 
+                                    $quantity = $item['quantity'];
                                     break;
                                 }
                             }
@@ -101,18 +103,23 @@ if (isset($_SESSION["users"])) {
             <h2>سبد خرید شما</h2>
             <div class="summary-item">
                 <span>تعداد کالاها</span>
-                <span><?php echo $total_quantity; ?></span> 
+                <span><?php echo $total_quantity; ?></span>
             </div>
             <div class="summary-item">
                 <span>جمع سبد خرید</span>
-                <span><?php echo number_format($total_price); ?> تومان</span> 
+                <span><?php echo number_format($total_price); ?> تومان</span>
             </div>
             <div class="summary-item total">
                 <span>سود شما از خرید</span>
-                <span> تومان</span> 
+                <span> تومان</span>
             </div>
-            <button>تایید و تکمیل سفارش</button>
+            <form action="checkout.php" method="POST">
+                <button type="submit">تایید و تکمیل سفارش</button>
+            </form>
+
+
         </div>
     </div>
 </body>
+
 </html>

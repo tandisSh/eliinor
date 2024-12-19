@@ -48,7 +48,7 @@ if (!isset($_SESSION['users'])) {
                             <li>افزودن کالا</li>
                         </a>
                         
-                        <a href="./listOrders.php" class="item">
+                        <a href="./listProducts.php" class="item">
                             <svg width="20" height="20" viewBox="0 0 66 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M64.1667 50.1875V6.84375C64.1667 3.06971 61.0874 0 57.2917 0H11.4583C5.14048 0 0 5.11569 0 11.4063V61.5938C0 67.8816 5.14048 73 11.4583 73H60.7292C62.627 73 64.1667 71.4674 64.1667 69.5781C64.1667 67.6889 62.627 66.1563 60.7292 66.1563H59.5833V56.6108C62.2475 55.6625 64.1667 53.1531 64.1667 50.1875ZM52.7083 66.1563H11.4583C8.93178 66.1563 6.875 64.1115 6.875 61.5938C6.875 59.076 8.93178 57.0313 11.4583 57.0313H52.7083V66.1563ZM57.2917 50.1875H11.4583C9.82839 50.1875 8.27864 50.5262 6.875 51.1409V11.4063C6.875 8.88833 8.93178 6.84375 11.4583 6.84375H57.2917V50.1875ZM21.7708 22.8125H46.9792C48.884 22.8125 50.4167 21.2869 50.4167 19.3906C50.4167 17.4943 48.884 15.9688 46.9792 15.9688H21.7708C19.8802 15.9688 18.3333 17.5086 18.3333 19.3906C18.3333 21.2726 19.8802 22.8125 21.7708 22.8125ZM21.7708 34.2188H46.9792C48.884 34.2188 50.4167 32.6932 50.4167 30.7969C50.4167 28.9006 48.884 27.375 46.9792 27.375H21.7708C19.8802 27.375 18.3333 28.9149 18.3333 30.7969C18.3333 32.6789 19.8802 34.2188 21.7708 34.2188Z"
@@ -87,8 +87,8 @@ if (!isset($_SESSION['users'])) {
                         </a>
 
 
-                        
-                        <a href="./historyOrder.html" class="item">
+                        <?php if ($_SESSION['users']['type'] == 0): ?>
+                        <a href="Orders.php" class="item">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                             <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -103,7 +103,25 @@ if (!isset($_SESSION['users'])) {
                                 </g>
                             </svg>
                             <li>تاریخچه سفارش ها</li>
-                        </a>
+                        </a> 
+                            <?php elseif($_SESSION['users']['type'] == 1): ?>
+                                <a href="listOrders.php" class="item">
+                                <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                            <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                    viewBox="0 0 219.15 219.15" xml:space="preserve"fill-opacity="0.4">
+                                <g>
+                                    <path d="M109.575,0C49.156,0,0.001,49.155,0.001,109.574c0,60.42,49.154,109.576,109.573,109.576
+                                        c60.42,0,109.574-49.156,109.574-109.576C219.149,49.155,169.995,0,109.575,0z M109.575,204.15
+                                        c-52.148,0-94.573-42.427-94.573-94.576C15.001,57.426,57.427,15,109.575,15c52.148,0,94.574,42.426,94.574,94.574
+                                        C204.149,161.724,161.723,204.15,109.575,204.15z"/>
+                                    <path d="M166.112,108.111h-52.051V51.249c0-4.142-3.357-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v64.362c0,4.142,3.358,7.5,7.5,7.5
+                                        h59.551c4.143,0,7.5-3.358,7.5-7.5C173.612,111.469,170.254,108.111,166.112,108.111z"/>
+                                </g>
+                            </svg>
+                            <li>تاریخچه سفارش ها</li>
+                        </a> 
+<?php endif;?>
                         <a href="./support.html" class="item">
                             <svg width="20" height="20" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1039_3414)">

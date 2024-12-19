@@ -53,19 +53,5 @@ $result = $pdo->query($sql);
             <?php endif; ?>
         </div>
     </div>
-
-    <!-- <script>
-        function editImage(id) {
-            alert("ویرایش عکس با شناسه: " + id);
-            کد ویرایش را اینجا اضافه کنید
-        }
-
-        function deleteImage(id) {
-            if (confirm("آیا از حذف این عکس مطمئن هستید؟")) {
-                alert("حذف عکس با شناسه: " + id);
-                کد حذف را اینجا اضافه کنید
-            }
-        }
-    </script> -->
 </body>
 </html>
