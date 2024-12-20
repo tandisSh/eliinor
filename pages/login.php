@@ -1,12 +1,5 @@
 <?php
 
-//  session_start();
-//  if(isset($_SESSION['users']))
-//  {
-//     header("Location:Dashboardd.php");
-//     exit();
-//  }
-
 session_start();
 require 'vendor/dbConnection.php'; // فایل اتصال به دیتابیس
 
