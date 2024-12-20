@@ -1,6 +1,6 @@
 <?php 
-include('pages/header.php');
-include('pages/vendor/dbConnection.php');
+include('header.php');
+include('vendor/dbConnection.php');
 
 $categories = $pdo->prepare("
     SELECT c.id AS category_id, c.name AS category_name, 
@@ -33,7 +33,7 @@ foreach ($data as $row) {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 <div class="products__home has-padding pt-4 pt-sm-5">
@@ -71,9 +71,9 @@ foreach ($data as $row) {
                     <div class="product__image">
                         <div class="img__holder">
                             <div>
-                               <a href="pages/single.php?id=<?php echo $product['product_id']; ?>">
+                               <a href="single.php?id=<?php echo $product['product_id']; ?>">
                                     <figure class="m-0 figure-product overflow-hidden">
-                                        <img src="public/images/<?php echo $product['pro_image']; ?>" alt="<?php echo $product['pro_name']; ?>" class="d-block w-100 image-product">
+                                        <img src="../public/images/<?php echo $product['pro_image']; ?>" alt="<?php echo $product['pro_name']; ?>" class="d-block w-100 image-product">
                                     </figure>
                                 </a>
                             </div>
@@ -85,7 +85,7 @@ foreach ($data as $row) {
                         </button>
                     </div>
                     <div class="product__details bg-white">
-                        <a class="product__details__title product-title" href="pages/single.php?id=<?php echo $product['product_id']; ?>">
+                        <a class="product__details__title product-title" href="single.php?id=<?php echo $product['product_id']; ?>">
                             <span><?php echo $product['pro_name']; ?></span>
                         </a>
                         <div class="product__details__price">
@@ -101,7 +101,7 @@ foreach ($data as $row) {
             <?php endforeach; ?>
         </div>
         <div class="products__home__more">
-            <a href="pages/category.php?id=<?php echo $categoryId; ?>" class="shape-container btn-link">
+            <a href="category.php?id=<?php echo $categoryId; ?>" class="shape-container btn-link">
                 مشاهده همه
             </a>
         </div>
@@ -109,8 +109,8 @@ foreach ($data as $row) {
 </div>
 
 <!-- svg part -->
-<?php include("pages/svgPart.php") ?>
+<?php include("svgPart.php") ?>
 <!-- end svg part -->
-<?php include('pages/footer.php'); ?>
+<?php include('footer.php'); ?>
 </body>
 </html>

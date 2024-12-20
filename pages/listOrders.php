@@ -43,16 +43,21 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // تغییر وضعیت سفارش
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['status'])) {
-    $order_id = $_POST['order_id'];
-    $status = $_POST['status'];
+    $order_id = intval($_POST['order_id']);
+    $status = intval($_POST['status']);
 
     $update_sql = "UPDATE orders SET status = :status WHERE id = :order_id";
     $update_stmt = $pdo->prepare($update_sql);
-    $update_stmt->execute(['status' => $status, 'order_id' => $order_id]);
-
-    header("Location: AdminOrders.php");
+    
+    if ($update_stmt->execute(['status' => $status, 'order_id' => $order_id])) {
+        echo "Update successful!";
+    } else {
+        echo "Update failed!";
+    }
     exit;
+    
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -111,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['s
                     </table>
                     <form method="POST" class="order-actions">
                         <input type="hidden" name="order_id" value="<?php echo $current_order_id; ?>">
-                        <button type="submit" name="status" value="2">ارسال شده</button>
-                        <button type="submit" name="status" value="3">لغو شده</button>
+                        <button type="submit" name="status" value="1">ارسال شده</button>
+                        <button type="submit" name="status" value="2">لغو شده</button>
                     </form>
                 </div>
         <?php else: ?>

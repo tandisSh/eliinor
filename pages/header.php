@@ -61,9 +61,9 @@
                         <?php 
                         if(isset($_SESSION['users'])){
                         ?>
-                <button id="login-btn" class="cart__button title"  > <a href="pages\dashbord.php" style="text-decoration: none; color:white;">داشبورد </a></button>
+                <button id="login-btn" class="cart__button title"  > <a href="dashbord.php" style="text-decoration: none; color:white;">داشبورد </a></button>
                 <?php }else{?>
-                    <button id="login-btn" class="cart__button title" ><a href="pages\login.php" style="text-decoration: none; color:white;"> ورود و عضویت </a></button>
+                    <button id="login-btn" class="cart__button title" ><a href="login.php" style="text-decoration: none; color:white;"> ورود و عضویت </a></button>
                     <?php }?>
             </div>
         </div>
