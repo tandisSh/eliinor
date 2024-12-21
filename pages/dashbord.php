@@ -151,7 +151,7 @@ if (!isset($_SESSION['users'])) {
                             </a>
                         <?php endif; ?>
                         <div id="log">
-                            <li>
+                            <!-- <li id="log">
 
                                 <a href="./vendor/Userlogout.php">
                                     <svg width="20" height="20" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,7 +163,7 @@ if (!isset($_SESSION['users'])) {
                                 </a>
 
 
-                            </li>
+                            </li> -->
                         </div>
                     </ul>
                 </aside>

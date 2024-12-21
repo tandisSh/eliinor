@@ -18,6 +18,10 @@ foreach ($data as $row) {
     $groupedProducts[$row['category_id']]['name'] = $row['category_name'];
     $groupedProducts[$row['category_id']]['products'][] = $row;
 }
+
+$stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
+$stmt->execute();
+$sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +38,24 @@ foreach ($data as $row) {
         crossorigin="anonymous"
     />
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/slider.css">
 </head>
 <body>
+<div class="slider">
+    <div class="slides">
+        <?php foreach ($sliders as $slide): ?>
+            <div>
+                <img src="<?php echo $slide['image_path']; ?>" alt="اسلایدر">
+                <?php if (!empty($slide['link'])): ?>
+                    <a href="<?php echo $slide['link']; ?>" class="btn">مشاهده</a>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+</div>
+
 <div class="products__home has-padding pt-4 pt-sm-5">
     <?php foreach ($groupedProducts as $categoryId => $categoryData): ?>
         <div class="products__home__top">
@@ -112,5 +132,35 @@ foreach ($data as $row) {
 <?php include("pages/svgPart.php") ?>
 <!-- end svg part -->
 <?php include('pages/footer.php'); ?>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(index) {
+        if (index < 0) index = images.length - 1;
+        if (index >= images.length) index = 0;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', () => {
+        index--;
+        showSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+        index++;
+        showSlide(index);
+    });
+
+    setInterval(() => {
+        index++;
+        showSlide(index);
+    }, 5000);
+</script>
+
 </body>
 </html>
