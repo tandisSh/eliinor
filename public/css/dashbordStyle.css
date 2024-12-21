@@ -14,8 +14,20 @@ body {
   width: 100%;
 }
 
+aside {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff2f8; 
+  color: #ffffff; 
+  border-radius: 5px;
+  overflow-y: auto; 
+  max-height: 100vh;
+}
+
 #rightSec{
   width: 20%; 
+  overflow-y: auto;
 }
 
 .leftSec {
@@ -23,8 +35,9 @@ body {
  justify-content: center;
 }
 
-.dashbord{
+#dashbord{
   width: 100%;  
+  max-height: 550vh;
 }
 
 .Outlet {
@@ -35,7 +48,10 @@ body {
   border-radius: 5px;
 }
 ul{
+  list-style: none;  padding: 0;
+  margin: 0;
   list-style: none;
+  max-height: 100%;
 }
 
 #item  {
@@ -47,24 +63,37 @@ ul{
 }
 
 li {
+  margin-bottom: 10px;
   font-weight: 500;
   white-space: nowrap;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
+  padding: 10px;
   color: #E35F83; 
+  
+}
+ a{
+  text-decoration: none;
 }
 
-#log{
-  font-weight: 500;
-  white-space: nowrap;
-  padding: 10px 15px;
+/* #log{
+  display: flex;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
   color: #E35F83;
-  list-style: none;
+  transition: background-color 0.3s ease-in-out;
   direction: rtl;
-  margin-top: 2vh;
   cursor: pointer;
-  width: 30%; 
+} */
+#log {
+  display: flex;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
 }
-
 
 .item:hover {
   background-color: #ffdce7;
@@ -79,27 +108,13 @@ li {
   background-color: #ffffff;
   border-radius: 5px;
   margin-top: 20px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-#log {
-  display: flex;
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-aside {
-  display: flex;
-  padding: 15px;
-  background-color: #fff2f8; 
-  color: #ffffff; 
-  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out; 
 }
 
 .item li {
+  padding: 5px 15px;
+}
+#log li {
   padding: 5px 15px;
 }
 
@@ -153,6 +168,11 @@ input[type="text"] {
   color: #555;
 }
 
-  
+ul::after {
+  content: '';
+  display: block;
+  height: 20px; /* فضای خالی اضافی */
+}
+ 
  
   

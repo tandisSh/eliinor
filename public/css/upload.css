@@ -1,12 +1,12 @@
-body{
+/* body{
     overflow: hidden;
-}
+} */
 #formdiv{
     justify-content: center;
     align-items: center; 
     width: 100%;
-    max-height: calc(100vh - 50px); /* ارتفاع کانتینر با در نظر گرفتن فضای اضافی */
-    overflow-y: auto;
+    max-height: calc(100vh - 50px); 
+    /* overflow-y: auto; */
     margin: 0 auto;
     padding: 20px;
     direction: rtl;
@@ -93,7 +93,7 @@ h1 {
 #buttons-container{
     display: flex;
     justify-content: center; /* افقی وسط می‌شود */
-    gap: 10px; /* فاصله بین دکمه‌ها */
+    gap: 5px; /* فاصله بین دکمه‌ها */
     margin-top: 20px; /* فاصله از بالای فرم */
 }
 
