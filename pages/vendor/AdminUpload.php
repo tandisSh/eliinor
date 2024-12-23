@@ -1,8 +1,8 @@
 <?php 
 include ('dbConnection.php');     
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
 $pro_name = $pro_qty = $pro_price = $pro_image = $pro_detail = "";
 $errors = [];
 

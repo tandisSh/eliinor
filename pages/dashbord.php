@@ -113,7 +113,11 @@ if (!isset($_SESSION['users'])) {
                                 <li>سبد خرید</li>
                             <?php endif; ?>
                         </a>
-
+                                <?php if (isset($_SESSION['users']) && $_SESSION['users']['type'] == 1): ?>
+                                    <a href="addslider.php" class="item">
+                                        <li>افزودن اسلایدر</li>
+                                    </a>
+                                <?php endif; ?>
 
                         <?php if ($_SESSION['users']['type'] == 0): ?>
                             <a href="Orders.php" class="item">

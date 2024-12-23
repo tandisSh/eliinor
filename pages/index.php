@@ -19,9 +19,9 @@ foreach ($data as $row) {
     $groupedProducts[$row['category_id']]['products'][] = $row;
 }
 
-$stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
-$stmt->execute();
-$sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
+// $stmt->execute();
+// $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="slides">
         <?php foreach ($sliders as $slide): ?>
             <div>
-                <img src="<?php echo $slide['image_path']; ?>" alt="اسلایدر">
+                <img src="<?php echo $slide['image']; ?>" alt="اسلایدر">
                 <?php if (!empty($slide['link'])): ?>
                     <a href="<?php echo $slide['link']; ?>" class="btn">مشاهده</a>
                 <?php endif; ?>
