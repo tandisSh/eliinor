@@ -37,7 +37,7 @@ if (!isset($_SESSION['users'])) {
                         </span>
                         <?php if ($_SESSION['users']['type'] == 1) { ?>
 
-                            <a href="./upload.php" class="item">
+                            <a href="./upload.php" class="item"   style="text-decoration: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="upload" width="32px" height="32px" fill-opacity="0.4">
                                     <g fill="#134563">
                                         <path d="M39.4 19.3 32 11.9l-7.4 7.4-1.8-1.8L32 8.2l9.2 9.3-1.8 1.8"></path>
@@ -47,7 +47,7 @@ if (!isset($_SESSION['users'])) {
                                 </svg>
                                 <li>افزودن کالا</li>
                             </a>
-                            <a href="AdminAddCategory.php" class="item">
+                            <a href="AdminAddCategory.php" class="item" style="text-decoration: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="upload" width="32px" height="32px" fill-opacity="0.4">
                                     <g fill="#134563">
                                         <path d="M39.4 19.3 32 11.9l-7.4 7.4-1.8-1.8L32 8.2l9.2 9.3-1.8 1.8"></path>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['users'])) {
                                 </svg>
                                 <li>افزودن دسته‌بندی</li>
                             </a>
-                            <a href="categoryList.php" class="item">
+                            <a href="categoryList.php" class="item" style="text-decoration: none;">
                                 <svg width="20" height="20" viewBox="0 0 66 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M64.1667 50.1875V6.84375C64.1667 3.06971 61.0874 0 57.2917 0H11.4583C5.14048 0 0 5.11569 0 11.4063V61.5938C0 67.8816 5.14048 73 11.4583 73H60.7292C62.627 73 64.1667 71.4674 64.1667 69.5781C64.1667 67.6889 62.627 66.1563 60.7292 66.1563H59.5833V56.6108C62.2475 55.6625 64.1667 53.1531 64.1667 50.1875ZM52.7083 66.1563H11.4583C8.93178 66.1563 6.875 64.1115 6.875 61.5938C6.875 59.076 8.93178 57.0313 11.4583 57.0313H52.7083V66.1563ZM57.2917 50.1875H11.4583C9.82839 50.1875 8.27864 50.5262 6.875 51.1409V11.4063C6.875 8.88833 8.93178 6.84375 11.4583 6.84375H57.2917V50.1875ZM21.7708 22.8125H46.9792C48.884 22.8125 50.4167 21.2869 50.4167 19.3906C50.4167 17.4943 48.884 15.9688 46.9792 15.9688H21.7708C19.8802 15.9688 18.3333 17.5086 18.3333 19.3906C18.3333 21.2726 19.8802 22.8125 21.7708 22.8125ZM21.7708 34.2188H46.9792C48.884 34.2188 50.4167 32.6932 50.4167 30.7969C50.4167 28.9006 48.884 27.375 46.9792 27.375H21.7708C19.8802 27.375 18.3333 28.9149 18.3333 30.7969C18.3333 32.6789 19.8802 34.2188 21.7708 34.2188Z"
@@ -65,7 +65,7 @@ if (!isset($_SESSION['users'])) {
                                 </svg>
                                 <li>لیست دسته‌بندی ها</li>
                             </a>
-                            <a href="./listProducts.php" class="item">
+                            <a href="./listProducts.php" class="item" style="text-decoration: none;">
                                 <svg width="20" height="20" viewBox="0 0 66 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M64.1667 50.1875V6.84375C64.1667 3.06971 61.0874 0 57.2917 0H11.4583C5.14048 0 0 5.11569 0 11.4063V61.5938C0 67.8816 5.14048 73 11.4583 73H60.7292C62.627 73 64.1667 71.4674 64.1667 69.5781C64.1667 67.6889 62.627 66.1563 60.7292 66.1563H59.5833V56.6108C62.2475 55.6625 64.1667 53.1531 64.1667 50.1875ZM52.7083 66.1563H11.4583C8.93178 66.1563 6.875 64.1115 6.875 61.5938C6.875 59.076 8.93178 57.0313 11.4583 57.0313H52.7083V66.1563ZM57.2917 50.1875H11.4583C9.82839 50.1875 8.27864 50.5262 6.875 51.1409V11.4063C6.875 8.88833 8.93178 6.84375 11.4583 6.84375H57.2917V50.1875ZM21.7708 22.8125H46.9792C48.884 22.8125 50.4167 21.2869 50.4167 19.3906C50.4167 17.4943 48.884 15.9688 46.9792 15.9688H21.7708C19.8802 15.9688 18.3333 17.5086 18.3333 19.3906C18.3333 21.2726 19.8802 22.8125 21.7708 22.8125ZM21.7708 34.2188H46.9792C48.884 34.2188 50.4167 32.6932 50.4167 30.7969C50.4167 28.9006 48.884 27.375 46.9792 27.375H21.7708C19.8802 27.375 18.3333 28.9149 18.3333 30.7969C18.3333 32.6789 19.8802 34.2188 21.7708 34.2188Z"
@@ -74,7 +74,7 @@ if (!isset($_SESSION['users'])) {
                                 <li>لیست محصولات</li>
                             </a>
 
-                            <a href="usersList.php" class="item">
+                            <a href="usersList.php" class="item" style="text-decoration: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="upload" width="32px" height="32px" fill-opacity="0.4">
                                     <g fill="#134563">
                                         <path d="M39.4 19.3 32 11.9l-7.4 7.4-1.8-1.8L32 8.2l9.2 9.3-1.8 1.8"></path>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['users'])) {
                             </a>
                         <?php } ?>
 
-                        <a href="./Profile.php" class="item">
+                        <a href="./Profile.php" class="item" style="text-decoration: none;">
                             <svg width="20" height="20" viewBox="0 0 66 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M38.9583 43.3438H25.2083C11.2864 43.3438 0 54.5788 0 68.4375C0 70.9567 2.05248 73 4.58333 73H59.5833C62.1141 73 64.1667 70.9567 64.1667 68.4375C64.1667 54.5788 52.8803 43.3438 38.9583 43.3438ZM7.01679 66.1563C8.14832 57.1597 15.8698 50.1875 25.2083 50.1875H38.9583C48.2911 50.1875 56.0168 57.1667 57.1483 66.1563H7.01679ZM32.0833 36.5C42.2081 36.5 50.4167 28.3289 50.4167 18.25C50.4167 8.17115 42.2081 0 32.0833 0C21.9585 0 13.75 8.17115 13.75 18.25C13.75 28.3303 21.957 36.5 32.0833 36.5ZM32.0833 6.84375C38.401 6.84375 43.5417 11.9609 43.5417 18.25C43.5417 24.5391 38.401 29.6563 32.0833 29.6563C25.7655 29.6563 20.625 24.5377 20.625 18.25C20.625 11.9609 25.7669 6.84375 32.0833 6.84375Z"
@@ -94,7 +94,7 @@ if (!isset($_SESSION['users'])) {
                             </svg>
                             <li>اطلاعات کاربری</li>
                         </a>
-                        <a href="<?php echo ($_SESSION['users']['type'] == 1) ? './adminbasket.php' : './showbasket.php?user_id=' . $_SESSION['users']['id']; ?>" class="item">
+                        <a href="<?php echo ($_SESSION['users']['type'] == 1) ? './adminbasket.php' : './showbasket.php?user_id=' . $_SESSION['users']['id']; ?>" class="item" style="text-decoration: none;">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                                 <defs>
                                 </defs>
@@ -113,14 +113,10 @@ if (!isset($_SESSION['users'])) {
                                 <li>سبد خرید</li>
                             <?php endif; ?>
                         </a>
-                                <?php if (isset($_SESSION['users']) && $_SESSION['users']['type'] == 1): ?>
-                                    <a href="addslider.php" class="item">
-                                        <li>افزودن اسلایدر</li>
-                                    </a>
-                                <?php endif; ?>
+                         
 
                         <?php if ($_SESSION['users']['type'] == 0): ?>
-                            <a href="Orders.php" class="item">
+                            <a href="Orders.php" class="item" style="text-decoration: none;">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                 <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -137,7 +133,7 @@ if (!isset($_SESSION['users'])) {
                                 <li>تاریخچه سفارش ها</li>
                             </a>
                         <?php elseif ($_SESSION['users']['type'] == 1): ?>
-                            <a href="listOrders.php" class="item">
+                            <a href="listOrders.php" class="item" style="text-decoration: none;">
                                 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                 <svg fill="#000000" height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -154,20 +150,20 @@ if (!isset($_SESSION['users'])) {
                                 <li>تاریخچه سفارش ها</li>
                             </a>
                         <?php endif; ?>
-                        <div id="log">
-                            <li>
-                                <a href="./vendor/Userlogout.php">
+                        <!-- <div id="log"> -->
+                           
+                                <a href="./vendor/Userlogout.php" style="text-decoration: none;" >
+                                <li style="background-color: #ffffff;  font-weight:500; white-space:nowrap; padding:15px 15px; color: #E35F83;  margin-top: 2vh;">
                                     <svg width="20" height="20" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M74 18.5V55.5C74 63.1631 67.7881 69.375 60.125 69.375H49.7188C47.7966 69.375 46.25 67.8284 46.25 65.9063C46.25 63.9897 47.8036 62.4375 49.7188 62.4375H60.125C63.9404 62.4375 67.0625 59.3154 67.0625 55.5V18.5C67.0625 14.6844 63.9404 11.5625 60.125 11.5625H49.7188C47.7966 11.5625 46.25 10.0088 46.25 8.09375C46.25 6.17726 47.7966 4.625 49.7188 4.625H60.125C67.7851 4.625 74 10.837 74 18.5ZM49.9356 34.6297L31.4355 14.9735C30.1203 13.5686 27.9235 13.505 26.536 14.8145C25.134 16.1297 25.0617 18.3265 26.377 19.714L39.3702 33.5313H3.46875C1.55371 33.5313 0 35.0922 0 37C0 38.9077 1.55371 40.4688 3.46875 40.4688H39.3702L26.374 54.2801C25.0597 55.6757 25.1275 57.8702 26.5231 59.1811C27.2008 59.8072 28.0535 60.125 28.9063 60.125C29.8276 60.125 30.749 59.7591 31.4312 59.032L49.9311 39.3758C51.1928 38.0404 51.1928 35.9594 49.9356 34.6297Z"
                                             fill="black" fill-opacity="0.4" />
                                     </svg>
                                     خروج از حساب کاربری
+                                    </li>
                                 </a>
-
-
-                            </li>
-                        </div>
+                            
+                        <!-- </div> -->
                     </ul>
                 </aside>
             </div>

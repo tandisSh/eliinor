@@ -1,10 +1,10 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
-  overflow: hidden; /* غیرفعال کردن اسکرول اصلی صفحه */
   margin: 0;
   padding: 0;
   direction: rtl;
+  overflow: hidden;
 }
 
 .card {
@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   max-height: calc(100vh - 50px); /* ارتفاع کانتینر با در نظر گرفتن فضای اضافی */
-  overflow-y: auto; /* فعال کردن اسکرول عمودی */
+  /* overflow-y: auto; فعال کردن اسکرول عمودی */
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,13 +87,16 @@ body {
   width: 20%;
   text-align: center;
   border:2px solid #E35F83;
-  color: #0f0a0a;
+  color: #ffffff;
   background-color: #E35F83;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
+#newpass a{
+  color: #ffffff;
 
+}
 #newpass:hover {
   background: #d7476d;
 }

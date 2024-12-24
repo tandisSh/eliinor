@@ -1,43 +1,39 @@
-let slideIndex = 0;
-showSlides(slideIndex);
+let slideIndex = 0;  // شروع از اولین اسلاید
+showSlides(slideIndex);  // نمایش اسلاید اولیه
 
-// Next/previous controls
+// دکمه‌های قبلی و بعدی
 function moveSlide(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
+// نمایش اسلاید
 function showSlides(n) {
     let i;
-    let slides = document.getElementsByClassName("carousel-slide");
+    let slides = document.getElementsByClassName("slide");  // استفاده از کلاس صحیح برای اسلایدها
     if (n >= slides.length) {
-        slideIndex = 0
+        slideIndex = 0;  // اگر به آخر رسیدیم، به اول برمی‌گردد
     }
     if (n < 0) {
-        slideIndex = slides.length - 1
+        slideIndex = slides.length - 1;  // اگر به ابتدا رسیدیم، به آخر برمی‌گردد
     }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.display = "none";  // همه اسلایدها را مخفی می‌کنیم
     }
-    slides[slideIndex].style.display = "block";
+    slides[slideIndex].style.display = "block";  // اسلاید فعلی را نمایش می‌دهیم
 }
 
-// Auto slide function
+// تابع اسلاید خودکار
 function autoSlides() {
-    let slides = document.getElementsByClassName("carousel-slide");
+    let slides = document.getElementsByClassName("slide");
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].style.display = "none";  // همه اسلایدها را مخفی می‌کنیم
     }
     slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;  // اگر به آخر رسیدیم، به اول برمی‌گردد
     }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(autoSlides, 5000); // Change image every 5 seconds
+    slides[slideIndex].style.display = "block";  // اسلاید فعلی را نمایش می‌دهیم
+    setTimeout(autoSlides, 5000);  // هر 5 ثانیه اسلاید بعدی را نمایش می‌دهیم
 }
 
-autoSlides();
+autoSlides();  // اجرای تابع اسلاید خودکار

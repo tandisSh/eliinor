@@ -79,7 +79,7 @@ try {
                                 </tr>
                             </table>
                             <div id="newpass">
-                                <a href="newpass.php" >تغییر رمز عبور</a>
+                                <a href="newpass.php" style="text-decoration: none;">تغییر رمز عبور</a>
                             </div>
                         </div>
 

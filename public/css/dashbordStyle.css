@@ -6,8 +6,8 @@ body, header {
 body {
   background-color: #fbfbfb; 
   font-family: Arial, sans-serif; 
+  overflow: auto;
 }
-
 .main {
   display: flex;
   direction: rtl;
@@ -16,6 +16,7 @@ body {
 
 #rightSec{
   width: 20%; 
+  overflow-y: auto;
 }
 
 .leftSec {
@@ -53,17 +54,6 @@ li {
   color: #E35F83; 
 }
 
-#log{
-  font-weight: 500;
-  white-space: nowrap;
-  padding: 10px 15px;
-  color: #E35F83;
-  list-style: none;
-  direction: rtl;
-  margin-top: 2vh;
-  cursor: pointer;
-  width: 30%; 
-}
 
 
 .item:hover {
@@ -74,15 +64,6 @@ li {
 }
 
 .item {
-  display: flex;
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-#log {
   display: flex;
   padding: 15px;
   background-color: #ffffff;

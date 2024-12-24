@@ -48,36 +48,15 @@ $sql = "SELECT * FROM sliders";
 </head>
 <body>
 <div class="slider">
-        <!-- اولین div برای نمایش اولین تصویر -->
-    <div class="first-slide">
-        <img src="../public/images/sliders/<?php  echo $sliders[5]['image']; ?>" alt="اسلایدر اول" width="100%">
-        <?php if (!empty($sliders[5]['link'])): ?>
-            <a href="<?php echo $sliders[5]['link']; ?>" class="btnn">مشاهده</a>
-        <?php endif; ?>
+    <div class="slide">
+        <img src="../public/images/sliders/IMG_20241210_161153_202.jpg" width="99%">
     </div>
-        <!-- دومین div برای نمایش باقی‌عکس‌ها -->
-        <div class="slides">
-        <?php foreach (array_slice($sliders, 5) as $slide): ?>
-            <div class="slide">
-                <img src="<?php echo $slide['image']; ?>" alt="اسلایدر">
-                <?php if (!empty($slide['link'])): ?>
-                    <a href="<?php echo $slide['link']; ?>" class="btnn">مشاهده</a>
-                <?php endif; ?>
-            </div>
-        <?php endforeach; ?>
+    <div class="slide">
+        <img src="../public/images/sliders/3.jpg" width="99%">
     </div>
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
     <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
-<!-- <div class="carousel-slide active">
-        <img src="./img/Label-1.jpg" width="99%">
-      </div>
-      <div class="carousel-slide">
-        <img src="./img/Label-2.jpg" width="99%">
-      </div>
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div> -->
 <div class="products__home has-padding pt-4 pt-sm-5">
     <?php foreach ($groupedProducts as $categoryId => $categoryData): ?>
         <div class="products__home__top">
