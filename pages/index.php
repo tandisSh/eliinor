@@ -19,6 +19,13 @@ foreach ($data as $row) {
     $groupedProducts[$row['category_id']]['products'][] = $row;
 }
 
+$sql = "SELECT * FROM sliders";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    // گرفتن تمام رکوردها
+    $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 // $stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
 // $stmt->execute();
 // $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,20 +48,36 @@ foreach ($data as $row) {
 </head>
 <body>
 <div class="slider">
-    <div class="slides">
-        <?php foreach ($sliders as $slide): ?>
-            <div>
+        <!-- اولین div برای نمایش اولین تصویر -->
+    <div class="first-slide">
+        <img src="../public/images/sliders/<?php  echo $sliders[5]['image']; ?>" alt="اسلایدر اول" width="100%">
+        <?php if (!empty($sliders[5]['link'])): ?>
+            <a href="<?php echo $sliders[5]['link']; ?>" class="btnn">مشاهده</a>
+        <?php endif; ?>
+    </div>
+        <!-- دومین div برای نمایش باقی‌عکس‌ها -->
+        <div class="slides">
+        <?php foreach (array_slice($sliders, 5) as $slide): ?>
+            <div class="slide">
                 <img src="<?php echo $slide['image']; ?>" alt="اسلایدر">
                 <?php if (!empty($slide['link'])): ?>
-                    <a href="<?php echo $slide['link']; ?>" class="btn">مشاهده</a>
+                    <a href="<?php echo $slide['link']; ?>" class="btnn">مشاهده</a>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
-    <button class="prev">❮</button>
-    <button class="next">❯</button>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
-
+<!-- <div class="carousel-slide active">
+        <img src="./img/Label-1.jpg" width="99%">
+      </div>
+      <div class="carousel-slide">
+        <img src="./img/Label-2.jpg" width="99%">
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div> -->
 <div class="products__home has-padding pt-4 pt-sm-5">
     <?php foreach ($groupedProducts as $categoryId => $categoryData): ?>
         <div class="products__home__top">
@@ -130,6 +153,8 @@ foreach ($data as $row) {
 <!-- svg part -->
 <?php include("svgPart.php") ?>
 <!-- end svg part -->
-<?php include('pages/footer.php'); ?>
+<?php include('footer.php'); ?>
+<script src="../public/js/slide.js"></script>
+
 </body>
 </html>

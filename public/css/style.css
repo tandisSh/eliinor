@@ -461,3 +461,56 @@ li{
     fill:black;
 }
 
+
+
+
+.slider {
+
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+}
+
+/* تنظیمات تصاویر در اسلایدها */
+/* .slide img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+} */
+
+
+.first-slide {
+    display: block;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    left: 10px;
+  }
+  
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    right: 10px;
+  }
+  

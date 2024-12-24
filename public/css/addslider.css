@@ -81,3 +81,58 @@ button.next {
 button.prev:hover, button.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* استایل برای هدر جدول */
+table th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* استایل برای داده‌های جدول */
+table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* استایل برای تصاویر */
+table img {
+    border-radius: 8px;
+}
+
+/* استایل برای ردیف‌ها */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* تغییر رنگ ردیف‌ها هنگام هاور */
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* استایل برای لینک حذف */
+.delete-btn {
+    color: #d9534f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    color: #c9302c;
+}
+
+/* استایل برای تاییدیه‌های حذف */
+.delete-btn:active {
+    color: #a94442;
+}

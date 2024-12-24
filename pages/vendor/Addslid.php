@@ -1,6 +1,6 @@
 <?php
 // اتصال به دیتابیس
-include('./vendor/dbConnection.php');
+include('dbConnection.php');
 
 // شروع جلسه
 session_start();
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_slide'])) {
                 $stmt->execute(['image' => $image_name, 'link' => $link]);
                 
                 // هدایت به صفحه پس از ذخیره
-                header("Location: admin_slider.php");
+                header("Location: ../index.php");
                 exit();
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
@@ -59,6 +59,3 @@ $stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
 $stmt->execute();
 $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-<!-- HTML برای فرم افزودن اسلایدر -->
-

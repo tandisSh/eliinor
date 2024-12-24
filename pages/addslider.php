@@ -1,6 +1,3 @@
-<?php
-include('./vendor/Addslider.php');
-?>
 
 <!DOCTYPE html>
 <html lang="fa">
@@ -8,14 +5,12 @@ include('./vendor/Addslider.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/addslider.css">
-
     <title>افزودن اسلایدر</title>
 </head>
 <body>
     <h1>افزودن اسلایدر</h1>
 
-    <!-- فرم افزودن اسلایدر -->
-    <form action="./vendor/Addslider.php" method="POST" enctype="multipart/form-data">
+    <form action="./vendor/Addslid.php" method="POST" enctype="multipart/form-data">
         <label for="image">انتخاب تصویر:</label>
         <input type="file" name="image" id="image" required><br><br>
 
@@ -32,6 +27,7 @@ include('./vendor/Addslider.php');
             <th>لینک</th>
             <th>عملیات</th>
         </tr>
+
         <?php foreach ($sliders as $slide): ?>
             <tr>
                 <td><img src="../../public/images/sliders/<?php echo htmlspecialchars($slide['image']); ?>" width="100" alt="Slider Image"></td>
