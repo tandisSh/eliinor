@@ -59,7 +59,7 @@ $products = $result->fetchAll(PDO::FETCH_ASSOC);
                     <div class="product__image">
                         <div class="img__holder">
                             <div>
-                                <a href="pages/single.php?id=<?php echo $product['id']; ?>">
+                                <a href="single.php?id=<?php echo $product['id']; ?>">
                                     <figure class="m-0 figure-product overflow-hidden">
                                         <img src="../public/images/<?php echo $product['pro_image']; ?>" alt="<?php echo htmlspecialchars($product['pro_name']); ?>" class="d-block w-100 image-product">
                                     </figure>

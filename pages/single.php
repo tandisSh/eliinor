@@ -97,10 +97,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
                     <div style="display: flex;">
                         <p style="font-weight: 600;font-size: larger;">قیمت:<?php echo $products['pro_price']; ?> تومان</p>
 
-                        <form method="POST" action="single.php?id=<?php echo $id; ?>">
+                        <form class="h" method="POST" action="single.php?id=<?php echo $id; ?>" style="display: flex; align-items: center; padding:10px;">
                             <input class="price-button" type="hidden" name="product_id" value="<?php echo $products['id']; ?>">
-                            <input type="number" name="quantity" value="1" min="1" style="width: 50px; margin-left: 10px;">
-                            <button class="price-button" type="submit" name="add_to_cart">افزودن به سبد خرید</button>
+                            <input type="number" name="quantity" value="1" min="1" style="width:50px; margin-left: 10px;">
+                            <button class="price-button" type="submit" name="add_to_cart" style="width: 300px;">افزودن به سبد خرید</button>
                         </form>
                     </div>
                 </div>

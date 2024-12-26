@@ -235,6 +235,8 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
 } */
+
+
 .productButtons .product__gallery__main__image__icon svg path {
     fill: #000;
 }
@@ -344,7 +346,7 @@ svg.selectedColorSvg[data-v-f0f5fe86] {
     font-size: 1.15rem;
     cursor: pointer;  
     border-style: none;
-    width: 20%;
+    
     height: 45px;
     margin: 1% 38% 0% 0%;
 }
@@ -480,19 +482,8 @@ svg.selectedColorSvg[data-v-f0f5fe86] {
     font-size: medium;
     background-color: unset;
 }
-
-    
-
 /* products */
-
-
-
 /* main end */
-
-
-
-
-
 
 /* main footer */
 .SvgsGroups[data-v-3dbb5f6f] {

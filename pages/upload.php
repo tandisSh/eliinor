@@ -18,7 +18,7 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/upload.css">
+    <link rel="stylesheet" href="../public/css/uploads.css">
     <title>Upload products</title>
 </head>
 
@@ -27,7 +27,6 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
         <form action="vendor/AdminUpload.php" method="POST" enctype="multipart/form-data">
             <table>
                 <h1>افزودن کالا</h1>
-
                 <tr>
                     <td>نام کالا<span style="color:red;">*</span></td>
                     <td><input type="text" style="text-align: right;" id="pro-name" name="pro-name" /></td>
