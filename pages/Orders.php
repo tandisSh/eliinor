@@ -14,6 +14,7 @@ $sql = "
     SELECT 
         o.id AS order_id, 
         o.created_at AS order_date, 
+        o.status AS status,
         SUM(oi.quantity * p.pro_price) AS order_total, 
         oi.product_id, 
         oi.quantity, 
@@ -68,6 +69,7 @@ $status_labels = [
                         <h2>شماره سفارش: <?php echo $order['order_id']; ?></h2>
                         <p>تاریخ سفارش: <?php echo $order['order_date']; ?></p>
                         <p>جمع کل: <?php echo number_format($order['order_total']); ?> تومان</p>
+                        <p>وضعیت سفارش: <?php echo $status_labels[$order['status']]; ?></p>
                         <table class="order-items">
                             <thead>
                                 <tr>
@@ -88,7 +90,6 @@ $status_labels = [
                                 </tr>
             <?php endforeach; ?>
                         </tbody>
-                        <!-- <p>وضعیت سفارش: <?php echo $status_labels[$order['status']]; ?></p> -->
 
                     </table>
                 </div>

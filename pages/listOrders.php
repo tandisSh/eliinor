@@ -1,18 +1,8 @@
 <?php
 include('vendor/dbConnection.php');
-session_start();
+include('vendor/processOrders.php');
 
-// چک کردن ورود ادمین
-
-
-// تعریف وضعیت‌ها
-$status_labels = [
-    1 => 'در حال بررسی',
-    2 => 'ارسال شده',
-    3 => 'لغو شده'
-];
-
-// واکشی سفارشات تمام کاربران
+// واکشی سفارشات
 $sql = "
     SELECT 
         o.id AS order_id, 
@@ -40,37 +30,28 @@ $sql = "
 
 $stmt = $pdo->query($sql);
 $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// تغییر وضعیت سفارش
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['status'])) {
-    $order_id = intval($_POST['order_id']);
-    $status = intval($_POST['status']);
-
-    $update_sql = "UPDATE orders SET status = :status WHERE id = :order_id";
-    $update_stmt = $pdo->prepare($update_sql);
-    
-    if ($update_stmt->execute(['status' => $status, 'order_id' => $order_id])) {
-        echo "Update successful!";
-    } else {
-        echo "Update failed!";
-    }
-    exit;
-    
-}
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدیریت سفارشات</title>
-    <link rel="stylesheet" href="../public/css/listOrders.css">
+    <link rel="stylesheet" href="../public/css/ListOrder.css">
 </head>
 <body>
     <div class="container">
         <h1>مدیریت سفارشات</h1>
+
+        <?php if (isset($_SESSION['message'])): ?>
+            <p class="success"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></p>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['error'])): ?>
+            <p class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
+
         <?php if (!empty($orders)): ?>
             <?php 
             $current_order_id = null; 
@@ -79,10 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['s
                 <?php if ($current_order_id !== $order['order_id']): ?>
                     <?php if ($current_order_id !== null): ?>
                         </table>
-                        <form method="POST" class="order-actions">
+                        <form method="POST" action="vendor/processOrders.php" class="order-actions">
                             <input type="hidden" name="order_id" value="<?php echo $current_order_id; ?>">
-                            <button type="submit" name="status" value="2">ارسال شده</button>
-                            <button type="submit" name="status" value="3">لغو شده</button>
+                            <label for="status-<?php echo $current_order_id; ?>">تغییر وضعیت:</label>
+                            <select name="status" id="status-<?php echo $current_order_id; ?>">
+                                <option value="0" <?php echo $order['status'] == 0 ? 'selected' : ''; ?>>در حال بررسی</option>
+                                <option value="1" <?php echo $order['status'] == 1 ? 'selected' : ''; ?>>ارسال شده</option>
+                                <option value="2" <?php echo $order['status'] == 2 ? 'selected' : ''; ?>>لغو شده</option>
+                            </select>
+                            <button type="submit">ثبت تغییر</button>
                         </form>
                     <?php endif; ?>
                     <div class="order">
@@ -90,9 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['s
                         <p>تاریخ سفارش: <?php echo $order['order_date']; ?></p>
                         <p>کاربر: <?php echo $order['username']; ?> (شناسه: <?php echo $order['user_id']; ?>)</p>
                         <p>جمع کل: <?php echo number_format($order['order_total']); ?> تومان</p>
-                        <!-- <p>وضعیت: 
-                            <?php echo $status_labels[$order['status']]; ?>
-                        </p> -->
+                        <p>وضعیت: <?php echo $status_labels[$order['status']]; ?></p>
                         <table class="order-items">
                             <thead>
                                 <tr>
@@ -114,11 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['s
             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <form method="POST" class="order-actions">
-                        <input type="hidden" name="order_id" value="<?php echo $current_order_id; ?>">
-                        <button type="submit" name="status" value="1">ارسال شده</button>
-                        <button type="submit" name="status" value="2">لغو شده</button>
-                    </form>
                 </div>
         <?php else: ?>
             <p>هیچ سفارشی ثبت نشده است.</p>

@@ -24,7 +24,7 @@ $category = $results->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div id="formdiv">
-        <form action="vendor/AdminUpload.php" method="POST" enctype="multipart/form-data">
+        <form  action="vendor/AdminUpload.php" method="POST" enctype="multipart/form-data">
             <table>
                 <h1>افزودن کالا</h1>
                 <tr>

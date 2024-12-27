@@ -1,32 +1,26 @@
-/* body{
-    overflow: hidden;
-} */
-#formdiv{
+#formdiv {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; 
+    justify-content: center; /* وسط چین کردن افقی */
+    align-items: center; /* وسط چین کردن عمودی */
     width: 100%;
-    max-height: calc(100vh - 50px); 
-    margin: 0 auto;
+    height: 100vh; /* ارتفاع صفحه رو می‌گیریم */
     padding: 20px;
     direction: rtl;
-    
 }
 
 form {
-    /* display: flex; */
-    flex-direction: column;
     background: #fff;
-    padding:10px ;
-    padding-right: 20px;
-    /* margin-right: 63px; */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    border:1px solid red;
-    height: 100vh;
+    width: 60%; /* عرض فرم رو محدود می‌کنیم */
+    max-width: 800px; /* عرض فرم رو برای اندازه‌های بزرگتر محدود می‌کنیم */
+    border: 1px solid red;
+    height: auto; /* ارتفاع فرم تنظیم می‌شود */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     overflow-y: auto;
 }
 
@@ -36,23 +30,10 @@ h1 {
     color: #333;
 }
 
- .Outlet {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #fff; 
-    border-radius: 5px;
-  }
-  /*
-  .leftSec {
-    width: 80%; 
-   justify-content: center;
-  } */
 table {
-    display: flex;
-    width: 100%;
+    width: 100%; /* عرض جدول رو به 100% تنظیم می‌کنیم */
     border-collapse: collapse;
+    margin: 0 auto; /* جدول رو وسط‌چین می‌کنیم */
 }
 
 td {
@@ -61,7 +42,7 @@ td {
 }
 
 input[type="text"], textarea {
-    width: 80%;
+    width: 80%; /* عرض ورودی‌ها و تکست‌ئریا رو کم و زیاد می‌کنیم */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -80,7 +61,6 @@ input[type="submit"], input[type="reset"] {
 input[type="submit"] {
     background: #28a745;
     color: #fff;
-    
 }
 
 input[type="submit"]:hover {
@@ -95,10 +75,12 @@ input[type="reset"] {
 input[type="reset"]:hover {
     background: #c82333;
 }
-input:hover{
+
+input:hover {
     background-color: #fff3f6;
     border: 1px solid #f47899;
 }
+
 textarea {
     resize: none;
 }
@@ -107,12 +89,11 @@ span {
     color: red;
 }
 
-
-#buttons-container{
+#buttons-container {
     display: flex;
-    justify-content: center; /* افقی وسط می‌شود */
-    gap: 5px; /* فاصله بین دکمه‌ها */
-    margin-top: 20px; /* فاصله از بالای فرم */
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
 }
 
 #upload-button {
@@ -140,25 +121,4 @@ span {
 .error-message {
     margin-top: 5px;
     display: block;
-}
-
-#main-container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
-
-#dashboard-section {
-    width: 20%;
-    background-color: #f5f5f5; /* رنگ پس‌زمینه برای تمایز */
-    border-left: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#upload-section {
-    width: 80%;
-    padding: 20px;
-    background-color: #fff;
-    overflow-y: auto;
 }

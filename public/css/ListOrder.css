@@ -112,3 +112,71 @@ h1 {
         padding: 8px 15px;
     }
 }
+/* استایل کلی فرم */
+.order-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+/* کانتینر وضعیت */
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* برچسب وضعیت */
+.status-label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* انتخاب وضعیت */
+.status-select {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.status-select:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* دکمه ارسال */
+.status-button {
+    padding: 5px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #E35F83;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.status-button:hover {
+    background-color: #E35F83;
+}
+
+/* تغییر رنگ با توجه به وضعیت انتخاب شده */
+.status-select option[value="0"] {
+    background-color: #f0ad4e; /* رنگ نارنجی */
+    color: black;
+}
+
+.status-select option[value="1"] {
+    background-color: #5cb85c; /* رنگ سبز */
+    color: white;
+}
+
+.status-select option[value="2"] {
+    background-color: #d9534f; /* رنگ قرمز */
+    color: white;
+}
