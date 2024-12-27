@@ -4,7 +4,7 @@ include ('dbConnection.php');
     $username = htmlspecialchars($_POST["username"]);
     $email = htmlspecialchars($_POST["email"]);
     $password = htmlspecialchars($_POST["password"]);
-    $phoneNumber = htmlspecialchars($_POST["phoneNumber"]);
+    $phoneNumber = ($_POST["phoneNumber"]);
     $nationalCode = htmlspecialchars($_POST["nationalCode"]);
     $degree = htmlspecialchars($_POST["degree"]);
 
