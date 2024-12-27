@@ -2,23 +2,10 @@
 include('vendor/dbConnection.php');
 session_start();
 
-// بازیابی لیست کاربران
 $sql = "SELECT id, username, email, phone_number, national_code, degree,  type FROM users";
 $stmt = $pdo->query($sql);
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// تغییر نقش کاربر
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'], $_POST['role'])) {
-    $user_id = $_POST['user_id'];
-    $role = $_POST['role'];
-
-    $update_sql = "UPDATE users SET role = :role WHERE id = :user_id";
-    $update_stmt = $pdo->prepare($update_sql);
-    $update_stmt->execute(['role' => $role, 'user_id' => $user_id]);
-
-    header("Location: AdminUsers.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

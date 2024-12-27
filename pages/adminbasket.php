@@ -2,7 +2,7 @@
 include('vendor/dbConnection.php');
 session_start();
 
-// بازیابی تمامی سبدهای خرید
+
 $basket_query = $pdo->prepare("SELECT 
     b.basket_id,
     b.user_id,
@@ -19,7 +19,6 @@ LEFT JOIN users u ON b.user_id = u.id");
 $basket_query->execute();
 $baskets = $basket_query->fetchAll(PDO::FETCH_ASSOC);
 
-// گروه‌بندی اطلاعات سبدها بر اساس کاربر
 $grouped_baskets = [];
 foreach ($baskets as $basket) {
     $user_id = $basket['user_id'];

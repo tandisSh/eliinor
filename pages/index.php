@@ -23,12 +23,7 @@ $sql = "SELECT * FROM sliders";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
-// گرفتن تمام رکوردها
 $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// $stmt = $pdo->prepare("SELECT * FROM sliders ORDER BY created_at DESC");
-// $stmt->execute();
-// $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +82,7 @@ $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="products__home__products">
                 <?php
-                $products = array_slice($categoryData['products'], 0, 5); // فقط 5 محصول
+                $products = array_slice($categoryData['products'], 0, 5);
                 foreach ($products as $product): ?>
                     <div class="normal product">
                         <div class="product__image">

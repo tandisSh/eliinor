@@ -1,20 +1,16 @@
 <?php
-// شروع سیشن
 session_start();
 
 include('vendor/dbConnection.php');
 
 if (!isset($_SESSION['users'])) {
-    // اگر کاربر لاگین نکرده بود، به صفحه ورود هدایت شود
     header("Location: login.php");
     exit();
 }
 
-// دریافت ID کاربر از سیشن
 $user_id = $_SESSION['users']['id'];
 
 try {
-    // دریافت اطلاعات کاربر از دیتابیس
     $query = "SELECT * FROM users WHERE id = :id";
     $stmt = $pdo->prepare($query);
     $stmt->execute(['id' => $user_id]);
@@ -25,7 +21,6 @@ try {
         exit();
     }
 
-        // بررسی نقش کاربر
     $is_admin = isset($user['type']) && $user['type'] == 1;
 
   

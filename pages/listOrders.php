@@ -55,7 +55,6 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p>جمع کل: <?php echo number_format($order['order_total']); ?> تومان</p>
                     <p>وضعیت: 
                         <?php 
-                        // وضعیت‌ها باید به صورت آرایه تعریف شده باشند. برای مثال:
                         $status_labels = ['در حال بررسی', 'ارسال شده', 'لغو شده'];
                         echo $status_labels[$order['status']];
                         ?>

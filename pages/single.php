@@ -26,7 +26,6 @@ if (isset($_GET['id'])) {
         $result->bindValue(':product_id', $id, PDO::PARAM_INT);
         $result->execute();
         $alike_pro = $result->fetchAll(PDO::FETCH_ASSOC);
-
     } else {
         echo "دسته‌بندی برای این محصول وجود ندارد.";
     }
@@ -145,49 +144,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
 
         <!-- products -->
         <div class="products__home__products" data-v-6e63b2b6="">
-            <?php foreach($alike_pro as $pro): ?>
-            <div class="normal product" data-v-5be2f538="" data-v-6e63b2b6="">
-                <div class="product__image" data-v-5be2f538="">
-                    <div class="img__holder" data-v-5be2f538="">
-                        <div data-v-5be2f538="">
-                            <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
+            <?php foreach ($alike_pro as $pro): ?>
+                <div class="normal product" data-v-5be2f538="" data-v-6e63b2b6="">
+                    <div class="product__image" data-v-5be2f538="">
+                        <div class="img__holder" data-v-5be2f538="">
+                            <div data-v-5be2f538="">
+                                <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
 
-                                <figure class="m-0 figure-product overflow-hidden" data-v-5be2f538="">
-                                <img src="../public/images/<?php echo $pro['pro_image']; ?>" style="width: 100%;" class="d-block w-100 image-product" data-v-5be2f538="">
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                    <button class="product__gallery__main__image__icon favorite productCard" data-v-942cf548="" data-v-5be2f538="">
-                        <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624" data-v-942cf548="">
-                            <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white" data-v-942cf548="">
-                            </path>
-                        </svg>
-                    </button>
-                    <div data-v-5be2f538="">
-                        <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
-                    </div>
-                </div>
-                <div data-v-5be2f538="">
-                <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
-                        <div class="product__details bg-white" data-v-5be2f538="">
-                            <a class="product__details__title product-title" href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538="">
-                                <span data-v-5be2f538=""> <?php echo $pro['pro_name']; ?></span>
-                            </a>
-                            <div class="product__details__price" data-v-5be2f538="">
-                                <div class="theme3 product__info__price" data-v-6380910f="" data-v-5be2f538="">
-
-                                    <span dir="rtl" class="product__info__price__amount" data-v-6380910f="">
-                                        <span class="product__info__price__amount__number" data-v-6380910f=""><?php echo $pro['pro_price']; ?></span>
-                                        <span class="type-price" data-v-6380910f=""> تومان </span>
-                                    </span>
-                                </div>
+                                    <figure class="m-0 figure-product overflow-hidden" data-v-5be2f538="">
+                                        <img src="../public/images/<?php echo $pro['pro_image']; ?>" style="width: 100%;" class="d-block w-100 image-product" data-v-5be2f538="">
+                                    </figure>
+                                </a>
                             </div>
                         </div>
-                    </a>
+                        <button class="product__gallery__main__image__icon favorite productCard" data-v-942cf548="" data-v-5be2f538="">
+                            <svg class="heartFillIconSvg" xmlns="http://www.w3.org/2000/svg" width="21.66" height="20.827" viewBox="0 0 20.902 19.624" data-v-942cf548="">
+                                <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M18.873,3.589a5.314,5.314,0,0,0-7.618.6l-.8.889-.8-.889a5.314,5.314,0,0,0-7.618-.6,6.608,6.608,0,0,0-.4,9.107l7.9,8.752a1.221,1.221,0,0,0,1.849,0l7.9-8.752a6.6,6.6,0,0,0-.4-9.107Z" transform="translate(0.001 -2.248)" fill="white" data-v-942cf548="">
+                                </path>
+                            </svg>
+                        </button>
+                        <div data-v-5be2f538="">
+                            <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
+                        </div>
+                    </div>
+                    <div data-v-5be2f538="">
+                        <a href="single.php?id=<?php echo $pro['id']; ?>" data-v-5be2f538="">
+                            <div class="product__details bg-white" data-v-5be2f538="">
+                                <a class="product__details__title product-title" href="/product/3422/%DA%A9%D8%AA-%DA%A9%D9%88%DA%A9-%D8%AF%D9%88%D8%B2%DB%8C-4255" data-v-5be2f538="">
+                                    <span data-v-5be2f538=""> <?php echo $pro['pro_name']; ?></span>
+                                </a>
+                                <div class="product__details__price" data-v-5be2f538="">
+                                    <div class="theme3 product__info__price" data-v-6380910f="" data-v-5be2f538="">
+
+                                        <span dir="rtl" class="product__info__price__amount" data-v-6380910f="">
+                                            <span class="product__info__price__amount__number" data-v-6380910f=""><?php echo $pro['pro_price']; ?></span>
+                                            <span class="type-price" data-v-6380910f=""> تومان </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
         <!-- products -->
     </div>

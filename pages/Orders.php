@@ -2,13 +2,11 @@
 include('vendor/dbConnection.php');
 session_start();
 
-// چک کردن ورود کاربر
 if (!isset($_SESSION['users'])) {
     echo "لطفاً وارد حساب کاربری خود شوید.";
     exit;
 }
 
-// واکشی سفارشات کاربر
 $user_id = $_SESSION['users']['id'];
 $sql = "
     SELECT 

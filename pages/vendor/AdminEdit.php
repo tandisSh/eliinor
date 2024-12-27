@@ -59,6 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ]);
     
     echo "محصول با موفقیت ویرایش شد.";
-    header("Location:../listOrders.php");
+    header("Location:../dashbord.php");
     exit();
 }

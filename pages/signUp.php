@@ -3,7 +3,7 @@
  session_start();
  if(isset($_SESSION['users']))
  {
-    header("Location:Dashboardd.php");
+    header("Location:dashboard.php");
     exit();
  }
 ?>
