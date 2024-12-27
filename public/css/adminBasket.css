@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f2;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+.user-basket {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    margin: 0 0 15px;
+    color: #555;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table thead {
+    background: #ff6699;
+    color: #fff;
+}
+table th, table td {
+    padding: 10px;
+    text-align: right;
+    border: 1px solid #ddd;
+}
+table tbody tr:nth-child(even) {
+    background: #ffe6f2;
+}
+table tbody tr:hover {
+    background: #ffd6e0;
+}
+.product-image img {
+    width: 50px;
+    height: auto;
+}
