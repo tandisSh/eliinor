@@ -1,30 +1,55 @@
 <?php
-
 session_start();
-require 'vendor/dbConnection.php'; // فایل اتصال به دیتابیس
+include('vendor/dbConnection.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT id, password FROM users WHERE username = :username");
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
+$emailError = $passwordError = "";
+$email = $password = "";
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id']; // ذخیره شناسه کاربر در سشن
-        header("Location: dashboard.php"); // هدایت به داشبورد
-        exit;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $isValid = true;
+
+    if (empty($_POST["email"])) {
+        $emailError = "لطفا ایمیل را وارد کنید*";
+        $isValid = false;
     } else {
-        echo "نام کاربری یا رمز عبور اشتباه است.";
+        $email = htmlspecialchars($_POST["email"]);
+    }
+
+    if (empty($_POST["password"])) {
+        $passwordError = "لطفا رمز عبور را وارد کنید*";
+        $isValid = false;
+    } else {
+        $password = $_POST["password"]; 
+    }
+
+
+    if ($isValid) {
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+         
+            if ($password === $user['password']) {
+                session_start();
+                $_SESSION['users'] = $user;
+                header("Location:index.php");
+                exit();
+                
+            } else {
+                $passwordError = "رمز عبور نادرست است";
+            }
+        } else {
+            $emailError = "ایمیل یافت نشد";
+        }
     }
 }
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,23 +58,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="container">
-<h2>فرم ورود</h2>
+    <h2>فرم ورود</h2>
+    <form method="post">
+        <label for="email">ایمیل:</label>
+        <input type="text" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+        <span class="error"><?php echo $emailError; ?></span>
 
-            <form action="vendor/UserLogin.php"  method="post">
+        <label for="password">رمز عبور:</label>
+        <input type="password" id="password" name="password">
+        <span class="error"><?php echo $passwordError; ?></span>
 
-            <label for="email">ایمیل:</label>
-            <input type="email" id="email" name="email" >
-            <span class="error"></span>
-
-            <label for="password">رمز عبور:</label>
-            <input type="password" id="password" name="password">
-            <span class="error"></span>
-            
-            <br><br>
-            <input type="submit" value="ورود">
-        </form>
-        <a style=" color:black; " href="signUp.php" >حساب کاربری ندارید؟ ثبت نام کنید</a>
-    </div>
-    <script src="../public/js/login.js"></script>
+        <br><br>
+        <input type="submit" value="ورود">
+    </form>
+    <br>
+    <br>
+    <a style="color:black; text-decoration:none;" href="signUp.php">حساب کاربری ندارید؟ ثبت نام کنید</a>
+</div>
+<script src="../public/js/login.js"></script>
 </body>
 </html>
