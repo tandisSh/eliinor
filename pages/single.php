@@ -15,21 +15,28 @@ if (isset($_GET['id'])) {
         $results->execute();
         $category = $results->fetch(PDO::FETCH_ASSOC);
 
-        $result = $pdo->prepare("SELECT * FROM products WHERE pro_category_id = :pro_category_id");
+        // Fetch only 4 similar products, excluding the current product
+        $result = $pdo->prepare("
+            SELECT * FROM products 
+            WHERE pro_category_id = :pro_category_id 
+            AND id != :product_id 
+            LIMIT 4
+        ");
         $result->bindValue(':pro_category_id', $products['pro_category_id'], PDO::PARAM_INT);
+        $result->bindValue(':product_id', $id, PDO::PARAM_INT);
         $result->execute();
         $alike_pro = $result->fetchAll(PDO::FETCH_ASSOC);
 
     } else {
         echo "دسته‌بندی برای این محصول وجود ندارد.";
     }
-   
 }
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
     include("vendor/UserBasket.php");
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

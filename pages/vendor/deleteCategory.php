@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
 
-    header("Location:../CategoryList.php");
+    header("Location:../dashbord.php");
     exit;
 } else {
     echo "شناسه دسته‌بندی ارسال نشده است!";

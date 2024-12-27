@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'], $_POST['ro
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدیریت کاربران</title>
-    <link rel="stylesheet" href="../public/css/usersList.css">
+    <link rel="stylesheet" href="../public/css/UsersList.css">
 </head>
 <body>
     <div class="container">

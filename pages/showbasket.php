@@ -188,11 +188,13 @@ if (isset($_SESSION["users"])) {
             <button type="submit">تایید و تکمیل سفارش</button>
         </form>
     </div>
+    <?php endif; ?>
 <?php else: ?>
     <p class="empty-cart">سبد خرید شما خالی است.</p>
-<?php endif; ?>
+
 <?php endif; ?>
     </div>
+    
 </body>
 
 </html>

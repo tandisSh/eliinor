@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("INSERT INTO categories (name) VALUES (:name)");
         $stmt->execute(['name' => $category_name]);
 
-        header("Location:../categoryList.php");
+        header("Location:../dashbord.php");
         exit();
     }
 }

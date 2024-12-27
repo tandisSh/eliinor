@@ -44,61 +44,54 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <h1>مدیریت سفارشات</h1>
 
-        <?php if (isset($_SESSION['message'])): ?>
-            <p class="success"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></p>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['error'])): ?>
-            <p class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
-        <?php endif; ?>
-
         <?php if (!empty($orders)): ?>
             <?php 
-            $current_order_id = null; 
             foreach ($orders as $order): 
             ?>
-                <?php if ($current_order_id !== $order['order_id']): ?>
-                    <?php if ($current_order_id !== null): ?>
-                        </table>
-                        <form method="POST" action="vendor/processOrders.php" class="order-actions">
-                            <input type="hidden" name="order_id" value="<?php echo $current_order_id; ?>">
-                            <label for="status-<?php echo $current_order_id; ?>">تغییر وضعیت:</label>
-                            <select name="status" id="status-<?php echo $current_order_id; ?>">
-                                <option value="0" <?php echo $order['status'] == 0 ? 'selected' : ''; ?>>در حال بررسی</option>
-                                <option value="1" <?php echo $order['status'] == 1 ? 'selected' : ''; ?>>ارسال شده</option>
-                                <option value="2" <?php echo $order['status'] == 2 ? 'selected' : ''; ?>>لغو شده</option>
-                            </select>
-                            <button type="submit">ثبت تغییر</button>
-                        </form>
-                    <?php endif; ?>
-                    <div class="order">
-                        <h2>شماره سفارش: <?php echo $order['order_id']; ?></h2>
-                        <p>تاریخ سفارش: <?php echo $order['order_date']; ?></p>
-                        <p>کاربر: <?php echo $order['username']; ?> (شناسه: <?php echo $order['user_id']; ?>)</p>
-                        <p>جمع کل: <?php echo number_format($order['order_total']); ?> تومان</p>
-                        <p>وضعیت: <?php echo $status_labels[$order['status']]; ?></p>
-                        <table class="order-items">
-                            <thead>
-                                <tr>
-                                    <th>نام محصول</th>
-                                    <th>قیمت</th>
-                                    <th>تعداد</th>
-                                    <th>جمع</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                <?php $current_order_id = $order['order_id']; ?>
-                <?php endif; ?>
-                                <tr>
-                                    <td><?php echo $order['pro_name']; ?></td>
-                                    <td><?php echo number_format($order['pro_price']); ?> تومان</td>
-                                    <td><?php echo $order['quantity']; ?></td>
-                                    <td><?php echo number_format($order['pro_price'] * $order['quantity']); ?> تومان</td>
-                                </tr>
-            <?php endforeach; ?>
+                <div class="order">
+                    <h2>شماره سفارش: <?php echo $order['order_id']; ?></h2>
+                    <p>تاریخ سفارش: <?php echo $order['order_date']; ?></p>
+                    <p>کاربر: <?php echo $order['username']; ?> (شناسه: <?php echo $order['user_id']; ?>)</p>
+                    <p>جمع کل: <?php echo number_format($order['order_total']); ?> تومان</p>
+                    <p>وضعیت: 
+                        <?php 
+                        // وضعیت‌ها باید به صورت آرایه تعریف شده باشند. برای مثال:
+                        $status_labels = ['در حال بررسی', 'ارسال شده', 'لغو شده'];
+                        echo $status_labels[$order['status']];
+                        ?>
+                    </p>
+                    <table class="order-items">
+                        <thead>
+                            <tr>
+                                <th>نام محصول</th>
+                                <th>قیمت</th>
+                                <th>تعداد</th>
+                                <th>جمع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $order['pro_name']; ?></td>
+                                <td><?php echo number_format($order['pro_price']); ?> تومان</td>
+                                <td><?php echo $order['quantity']; ?></td>
+                                <td><?php echo number_format($order['pro_price'] * $order['quantity']); ?> تومان</td>
+                            </tr>
                         </tbody>
                     </table>
+
+                    <!-- فرم تغییر وضعیت برای هر سفارش -->
+                    <form method="POST" action="vendor/processOrders.php" class="order-actions">
+                        <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
+                        <label for="status-<?php echo $order['order_id']; ?>">تغییر وضعیت:</label>
+                        <select name="status" id="status-<?php echo $order['order_id']; ?>">
+                            <option value="0" <?php echo $order['status'] == 0 ? 'selected' : ''; ?>>در حال بررسی</option>
+                            <option value="1" <?php echo $order['status'] == 1 ? 'selected' : ''; ?>>ارسال شده</option>
+                            <option value="2" <?php echo $order['status'] == 2 ? 'selected' : ''; ?>>لغو شده</option>
+                        </select>
+                        <button type="submit">ثبت تغییر</button>
+                    </form>
                 </div>
+            <?php endforeach; ?>
         <?php else: ?>
             <p>هیچ سفارشی ثبت نشده است.</p>
         <?php endif; ?>

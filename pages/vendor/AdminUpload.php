@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "لطفاً تصویر کالا را وارد کنید.";
     } else {
         // بررسی نوع فایل و اندازه
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif','image/WEBP'];
         $max_size = 5 * 1024 * 1024; 
 
         if (!in_array($pro_image['type'], $allowed_types)) {

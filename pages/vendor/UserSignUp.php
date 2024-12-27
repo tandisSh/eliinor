@@ -21,10 +21,12 @@ include ('dbConnection.php');
             ':national_code' => $nationalCode,
             ':degree' => $degree
         ]);
+
+        
   
-      session_start();
+       session_start();
           $_SESSION['users'] = $user;
-          header("Location:../index.php");
+          header("Location:../login.php");
           exit();
     } catch (PDOException $e) {
         die("Error inserting data: " . $e->getMessage());

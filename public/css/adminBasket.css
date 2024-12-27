@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffe6f2;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     direction: rtl;
@@ -41,7 +41,7 @@ table th, table td {
     border: 1px solid #ddd;
 }
 table tbody tr:nth-child(even) {
-    background: #ffe6f2;
+    background: #ffffff;
 }
 table tbody tr:hover {
     background: #ffd6e0;
